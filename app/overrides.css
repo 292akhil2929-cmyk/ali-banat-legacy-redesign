@@ -15,7 +15,11 @@
 .hero-image{opacity:.22;filter:saturate(.68)}
 .hero-overlay{background:linear-gradient(90deg,rgba(4,14,32,.98) 0%,rgba(5,18,43,.94) 48%,rgba(5,18,43,.72) 100%),linear-gradient(0deg,rgba(4,14,32,.98) 0%,rgba(4,14,32,.22) 78%)}
 .hero-content{max-width:1160px;padding-left:clamp(48px,5vw,88px);padding-right:clamp(48px,5vw,88px)}
-.hero h1{max-width:860px}
+.hero-content{padding-top:clamp(128px,15vh,164px);padding-bottom:76px}
+.hero h1{max-width:860px;font-size:clamp(3.5rem,6.2vw,6.25rem);margin-bottom:20px}
+.hero-copy{max-width:620px;font-size:1.02rem;line-height:1.55}
+.hero-actions{margin-top:24px}
+.hero-proof{margin-top:36px}
 .blue-mission{background:var(--navy-2)}
 .first-mission>div{background:#eef6f8}
 .project-card,.tone-blue,.tone-pink,.tone-sand,.tone-navy{background:#eef6f8;color:var(--ink)}
