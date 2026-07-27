@@ -6,3 +6,25 @@
 @media(max-width:680px){.cookie{left:auto;right:12px;max-width:280px;bottom:67px}}
 @media(max-width:900px){.story-two-col,.mission-head{gap:45px}.impact-timeline{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){.site-header.scrolled .menu-button{color:var(--ink)}.dark-story,.blue-mission,.mission-section{padding-left:20px;padding-right:20px}.story-two-col,.mission-head{grid-template-columns:1fr}.first-mission{grid-template-columns:1fr;margin-top:38px}.impact-timeline{grid-template-columns:1fr;gap:28px}.impact-timeline li{padding-top:15px}.video-card{max-width:100%}.quote-light{margin-top:35px}.give-intro{margin-top:12px}}
+
+/* Final visual direction: MATW blue/navy system, pink reserved for donation actions. */
+.site-header.scrolled{background:rgba(251,251,249,.96)}
+.section-index{color:var(--blue);letter-spacing:.14em}
+.eyebrow{color:var(--sky)}
+.hero{background:#071329}
+.hero-image{opacity:.22;filter:saturate(.68)}
+.hero-overlay{background:linear-gradient(90deg,rgba(4,14,32,.98) 0%,rgba(5,18,43,.94) 48%,rgba(5,18,43,.72) 100%),linear-gradient(0deg,rgba(4,14,32,.98) 0%,rgba(4,14,32,.22) 78%)}
+.hero-content{max-width:1160px;padding-left:clamp(48px,5vw,88px);padding-right:clamp(48px,5vw,88px)}
+.hero h1{max-width:860px}
+.blue-mission{background:var(--navy-2)}
+.first-mission>div{background:#eef6f8}
+.project-card,.tone-blue,.tone-pink,.tone-sand,.tone-navy{background:#eef6f8;color:var(--ink)}
+.tone-navy p,.tone-navy .card-link{color:#59657a}
+.tone-navy .project-tag,.project-tag,.tone-pink .project-tag{background:rgba(255,255,255,.65);color:var(--blue)}
+.section-index{text-transform:none;font-size:.84rem;font-weight:600;letter-spacing:.06em}
+.intro#story{background:#fff}
+.intro#story .content-grid{max-width:1180px;gap:clamp(70px,9vw,150px)}
+.intro#story h2{font-size:clamp(3.4rem,6vw,6.4rem);max-width:520px}
+.intro#story .body-copy{font-size:1.08rem;line-height:1.78}
+.intro#story .body-copy blockquote{margin-top:46px}
+@media(max-width:680px){.hero-content{padding-left:20px;padding-right:20px}.intro#story h2{font-size:3.4rem}.intro#story .body-copy{font-size:1rem}}
