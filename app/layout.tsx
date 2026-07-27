@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./overrides.css";
+import "./hero-collage.css";
 
 export const metadata: Metadata = {
   title: "Ali Banat Legacy | A legacy that continues",
