@@ -56,6 +56,17 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-image" aria-hidden="true" /><div className="hero-overlay" aria-hidden="true" />
+        <div className="hero-collage" aria-label="Ali Banat and the humanitarian work of MATW Project">
+          <figure className="hero-photo hero-photo-founder">
+            <img src="https://i.ytimg.com/vi/dzL6BLPAFBo/maxresdefault.jpg" alt="Ali Banat speaking about his Gifted with Cancer journey" />
+            <figcaption><span>Founder</span><strong>Ali Banat</strong></figcaption>
+          </figure>
+          <figure className="hero-photo hero-photo-impact">
+            <img src="https://amanahfy-prod.s3.eu-west-2.amazonaws.com/admin-image-1732136940674.png" alt="MATW humanitarian relief reaching families in need" />
+            <figcaption><span>MATW Project</span><strong>Hope in action</strong></figcaption>
+          </figure>
+          <span className="hero-collage-stamp">A legacy<br /><i>in motion</i></span>
+        </div>
         <div className="hero-content" id="main">
           <p className="eyebrow eyebrow-light">The story of Ali Banat &amp; MATW Project</p>
           <h1>One life.<br />One decision.<br /><i>A legacy that continues.</i></h1>
