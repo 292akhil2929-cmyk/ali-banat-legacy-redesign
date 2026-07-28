@@ -7,6 +7,9 @@ import CountUp from "../components/CountUp";
 const MATW = "https://matwproject.org/";
 
 const heroGalleryItems = [
+  { image: "/assets/hero-ali-portrait-clean.png", text: "" },
+  { image: "/assets/hero-matw-food-service.png", text: "" },
+  { image: "/assets/hero-ali-children.png", text: "" },
   { image: "/assets/ali-banat-child.jpg", text: "" },
   { image: "/assets/matw-community-2.jpg", text: "" },
   { image: "https://cdn.matwproject.org/static/media/legacy11.81a5d3462eb095e5e34f.png", text: "" },
