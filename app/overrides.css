@@ -220,7 +220,7 @@
 .impact-stats div{position:relative}
 
 /* MATW desktop composition: let the story breathe across the viewport at 100%. */
-@media(min-width:901px){
+@media(min-width:701px){
   .impact-section{padding:clamp(110px,9vw,150px) 6vw;background:#102b63}
   .impact-inner{max-width:1120px}
   .impact-heading{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);gap:clamp(70px,9vw,150px);align-items:end}
