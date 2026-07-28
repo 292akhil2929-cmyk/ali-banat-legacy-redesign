@@ -343,6 +343,9 @@ export default function Home() {
           aria-label="Story chapters"
         >
           <span className="chapter-rail-progress" style={{ height: `${((activeChapter + 1) / chapterRailItems.length) * 100}%` }} aria-hidden="true" />
+          <span className="chapter-rail-count" aria-live="polite">
+            {String(activeChapter + 1).padStart(2, "0")} <i>/ 08</i>
+          </span>
           {chapterRailItems.map(([id, label], index) => (
             <a className={`chapter-rail-item ${activeChapter === index ? "is-active" : ""}`} href={`#${id}`} key={id}>
               <span className="chapter-rail-tick" />
