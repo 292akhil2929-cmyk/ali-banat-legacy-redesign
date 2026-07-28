@@ -280,3 +280,34 @@
 .chapter-five{background:var(--paper);color:var(--ink)}
 .chapter-five .light-copy{color:#45516a}.chapter-five .light-copy strong{color:var(--ink)}.chapter-five .creed{border-color:var(--line);color:var(--ink)}.chapter-five .creed li{border-color:var(--line)}
 .chapter-six .section-index{color:var(--sky)}.chapter-six .body-copy{color:rgba(255,255,255,.78)}.chapter-six .body-copy strong{color:#fff}.chapter-six .body-copy a{color:var(--sky)}
+
+/* Chapter 07 — Aceternity-inspired scrolling impact timeline. */
+.impact-section .impact-timeline{--spine:10px;position:relative;display:block;margin:clamp(52px,7vw,94px) 0 52px;padding:0 0 0 47px}
+.impact-section .impact-timeline:before,.impact-section .impact-timeline:after{content:"";position:absolute;left:var(--spine);top:9px;bottom:10px;width:1px}
+.impact-section .impact-timeline:before{display:block;background:rgba(159,228,244,.22)}
+.impact-section .impact-timeline:after{display:block;background:linear-gradient(var(--sky) 0%,#00a3da 55%,var(--pink) 100%);transform:scaleY(0);transform-origin:top;transition:transform 2.2s cubic-bezier(.22,1,.36,1)}
+.impact-section.section-in-view .impact-timeline:after{transform:scaleY(1)}
+.impact-section .impact-timeline li{position:relative;display:block;overflow:visible;border:0!important;padding:0 0 clamp(54px,7vw,92px)!important}
+.impact-section .impact-timeline li:last-child{padding-bottom:0!important}
+.impact-section .impact-timeline li:before{display:block;top:7px;left:calc(-1 * (47px - var(--spine) + 4px));width:9px;height:9px;border:1px solid var(--sky);background:#102b63;box-shadow:0 0 0 7px rgba(16,43,99,.86);z-index:1}
+.impact-section .impact-timeline li:after{display:none!important}
+.impact-section .impact-timeline li>span,.impact-section .impact-timeline li>div{opacity:0;transform:translateY(24px)}
+.impact-section .impact-timeline li>span{display:block;margin:0 0 13px;color:var(--sky);font-family:var(--body);font-size:.68rem!important;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.impact-section .impact-timeline li>div{position:relative;padding:0 0 0 0}
+.impact-section .impact-timeline h3{max-width:580px;margin:0 0 11px;font-size:clamp(1.55rem,2.5vw,2.45rem)!important;line-height:1.03;letter-spacing:-.045em}
+.impact-section .impact-timeline p{max-width:580px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(.88rem,1.2vw,1rem)!important;line-height:1.75}
+.impact-section .impact-timeline li.timeline-item-in-view>span,.impact-section .impact-timeline li.timeline-item-in-view>div{animation:impact-scroll-reveal .75s cubic-bezier(.22,1,.36,1) forwards}
+.impact-section .impact-timeline li.timeline-item-in-view>div{animation-delay:.1s}
+.impact-section .impact-timeline li:hover h3{color:var(--sky)}
+@keyframes impact-scroll-reveal{to{opacity:1;transform:translateY(0)}}
+@media(min-width:701px){
+  .impact-section .impact-timeline{--spine:31.5%;padding:0;margin-top:clamp(76px,9vw,120px);margin-bottom:clamp(76px,9vw,110px)}
+  .impact-section .impact-timeline:before,.impact-section .impact-timeline:after{left:var(--spine)}
+  .impact-section .impact-timeline li{display:grid;grid-template-columns:31.5% minmax(0,1fr);gap:clamp(52px,8vw,118px)}
+  .impact-section .impact-timeline li:before{left:calc(var(--spine) - 5px)}
+  .impact-section .impact-timeline li>span{position:sticky;top:126px;align-self:start;margin:5px 0 0;padding-right:clamp(35px,5vw,76px);text-align:right}
+  .impact-section .impact-timeline li>div{padding:0 0 4px}
+  .impact-section .impact-timeline h3{font-size:clamp(2rem,3.2vw,3.35rem)!important}
+  .impact-section .impact-timeline p{max-width:620px;font-size:1rem!important}
+}
+@media(prefers-reduced-motion:reduce){.impact-section .impact-timeline:after{transform:none!important;transition:none!important}.impact-section .impact-timeline li>span,.impact-section .impact-timeline li>div{opacity:1!important;transform:none!important;animation:none!important}}

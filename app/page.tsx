@@ -177,7 +177,23 @@ export default function Home() {
       { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
     );
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const timelineItems = Array.from(document.querySelectorAll(".impact-timeline li"));
+    const timelineObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("timeline-item-in-view");
+            timelineObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -16% 0px", threshold: 0.18 },
+    );
+    timelineItems.forEach((item) => timelineObserver.observe(item));
+    return () => {
+      observer.disconnect();
+      timelineObserver.disconnect();
+    };
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
