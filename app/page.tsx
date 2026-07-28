@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CircularGallery from "../components/CircularGallery";
+import CountUp from "../components/CountUp";
 
 const MATW = "https://matwproject.org/";
 
@@ -23,6 +24,7 @@ const projects: Array<{
   tone: string;
   quote?: string;
   cite?: string;
+  note?: string;
   subHref?: string;
   subAction?: string;
 }> = [
@@ -32,6 +34,7 @@ const projects: Array<{
     copy: "As the crisis continues, families face displacement, hunger and loss. Help deliver urgent relief where it is needed most, right now.",
     href: "https://matwproject.org/gaza-emergency",
     action: "Support Gaza",
+    note: "Immediate relief when families need it most.",
     tone: "urgent",
   },
   {
@@ -73,6 +76,7 @@ const projects: Array<{
     copy: "Fulfil your obligation, purify your wealth and support eligible families facing poverty and hardship — with a 100% Zakat policy.",
     href: "https://matwproject.org/zakat",
     action: "Give Zakat",
+    note: "A 100% Zakat policy that honours every Amanah.",
     subHref: "https://matwproject.org/zakat-calculator",
     subAction: "Calculate your Zakat",
     tone: "navy",
@@ -83,6 +87,7 @@ const projects: Array<{
     copy: "Hot meals, food packs and clean drinking water for families surviving conflict, displacement and poverty. A meal may seem simple — for a hungry child, it is relief.",
     href: "https://matwproject.org/food-and-water-aid",
     action: "Provide food & water",
+    note: "A meal may feel simple. For a hungry child, it is relief.",
     tone: "blue",
   },
 ];
@@ -723,19 +728,19 @@ export default function Home() {
           </ol>
           <div className="impact-stats">
             <div>
-              <strong>18,000+</strong>
+              <CountUp end={18000} suffix="+" />
               <span>Orphans under ongoing care</span>
             </div>
             <div>
-              <strong>2,900+</strong>
+              <CountUp end={2900} suffix="+" />
               <span>Water wells built</span>
             </div>
             <div>
-              <strong>Hundreds</strong>
+              <CountUp end={100} suffix="+" />
               <span>Masjids constructed</span>
             </div>
             <div>
-              <strong>Millions</strong>
+              <CountUp end={1} suffix="M+" />
               <span>Meals &amp; food items distributed</span>
             </div>
           </div>
@@ -792,6 +797,12 @@ export default function Home() {
                   <blockquote className="project-quote">
                     {project.quote} <cite>— {project.cite}</cite>
                   </blockquote>
+                )}
+                {!project.quote && (
+                  <div className="project-note">
+                    <span>MATW Project</span>
+                    <em>{project.note}</em>
+                  </div>
                 )}
                 <a
                   className="card-link"
