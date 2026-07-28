@@ -7,12 +7,11 @@ import CountUp from "../components/CountUp";
 const MATW = "https://matwproject.org/";
 
 const heroGalleryItems = [
-  { image: "/assets/matw-ali-banat.jpg", text: "Founder · Ali Banat" },
-  { image: "/assets/ali-banat-child.jpg", text: "MATW Project · Service" },
-  { image: "/assets/matw-community-2.jpg", text: "Community · Hope in action" },
-  { image: "/assets/matw-legacy-children.png", text: "Orphan care · Dignity" },
-  { image: "/assets/matw-legacy-community.png", text: "The legacy · Continues" },
-  { image: "/assets/matw-ali-message.jpg", text: "Purpose · A final message" },
+  { image: "/assets/ali-banat-child.jpg", text: "" },
+  { image: "/assets/matw-community-2.jpg", text: "" },
+  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2F4cf88af6a2734c60bbb6098db43708b2", text: "" },
+  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2Fb6f1e42ef2dd4646ae0995d28ab9e432", text: "" },
+  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2Ff493fc341b584d9a958c86195eccec22", text: "" },
 ];
 
 const projects: Array<{
@@ -507,7 +506,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="blue-mission">
+      <section className="dark-story chapter-four">
         <div className="section-inner">
           <p className="section-index section-index-light">
             Chapter 04 — The birth of MATW
@@ -566,7 +565,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dark-story final-message">
+      <section className="final-message section-paper chapter-five">
         <div className="section-inner">
           <p className="section-index section-index-light">
             Chapter 05 — His final wish
@@ -617,7 +616,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="intro section-paper">
+      <section className="dark-story chapter-six">
         <div className="content-grid">
           <div>
             <p className="section-index">Chapter 06 — The legacy lives on</p>

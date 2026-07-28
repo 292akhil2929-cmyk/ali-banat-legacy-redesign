@@ -274,3 +274,9 @@
   .trust-list li{font-size:.78rem}
 }
 .chapter-rail{display:none!important}
+
+/* Preserve the chapter cadence: paper, night, paper, night. */
+.chapter-four{background:#08162e}
+.chapter-five{background:var(--paper);color:var(--ink)}
+.chapter-five .light-copy{color:#45516a}.chapter-five .light-copy strong{color:var(--ink)}.chapter-five .creed{border-color:var(--line);color:var(--ink)}.chapter-five .creed li{border-color:var(--line)}
+.chapter-six .section-index{color:var(--sky)}.chapter-six .body-copy{color:rgba(255,255,255,.78)}.chapter-six .body-copy strong{color:#fff}.chapter-six .body-copy a{color:var(--sky)}

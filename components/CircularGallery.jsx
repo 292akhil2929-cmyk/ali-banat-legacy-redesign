@@ -44,12 +44,14 @@ class GalleryItem {
     this.plane = new Mesh(gl, { geometry, program: this.program });
     this.plane.setParent(scene);
     const image = new Image();
+    image.crossOrigin = "anonymous";
     image.src = item.image;
     image.onload = () => {
       texture.image = image;
       this.program.uniforms.uImageSizes.value = [image.naturalWidth, image.naturalHeight];
     };
-    const title = makeTextTexture(gl, item.text, textColor, font);
+    if (item.text) {
+      const title = makeTextTexture(gl, item.text, textColor, font);
     this.title = new Mesh(gl, { geometry: new Plane(gl), program: new Program(gl, {
       transparent: true,
       vertex: `attribute vec3 position;attribute vec2 uv;uniform mat4 modelViewMatrix;uniform mat4 projectionMatrix;varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
@@ -58,6 +60,7 @@ class GalleryItem {
     }) });
     this.title.scale.set(0.62 * title.aspect, 0.62, 1);
     this.title.setParent(this.plane);
+    }
     this.resize({ screen, viewport });
   }
 
@@ -67,7 +70,7 @@ class GalleryItem {
     this.plane.scale.y = (viewport.height * (800 * scale)) / screen.height;
     this.plane.scale.x = (viewport.width * (610 * scale)) / screen.width;
     this.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-    this.title.position.y = -this.plane.scale.y / 2 - .43;
+    if (this.title) this.title.position.y = -this.plane.scale.y / 2 - .43;
     this.width = this.plane.scale.x + 1.7;
     this.total = this.width * this.length;
     this.x = this.width * this.index;
