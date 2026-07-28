@@ -9,9 +9,9 @@ const MATW = "https://matwproject.org/";
 const heroGalleryItems = [
   { image: "/assets/ali-banat-child.jpg", text: "" },
   { image: "/assets/matw-community-2.jpg", text: "" },
-  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2F4cf88af6a2734c60bbb6098db43708b2", text: "" },
-  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2Fb6f1e42ef2dd4646ae0995d28ab9e432", text: "" },
-  { image: "https://cdn.builder.io/api/v1/image/assets%2F32b8c354d4bc455dbf10fed3923dfae1%2Ff493fc341b584d9a958c86195eccec22", text: "" },
+  { image: "https://cdn.matwproject.org/static/media/legacy11.81a5d3462eb095e5e34f.png", text: "" },
+  { image: "https://cdn.matwproject.org/static/media/legacy12.753a665c4fe79de4b973.png", text: "" },
+  { image: "https://cdn.matwproject.org/static/media/legacy13.db02f131140dccb74bfa.png", text: "" },
 ];
 
 const projects: Array<{
