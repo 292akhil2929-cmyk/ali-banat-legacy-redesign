@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LineSidebar from "./LineSidebar";
 
 const MATW = "https://matwproject.org/";
 
@@ -21,6 +22,8 @@ const faqs = [
   ["Can I donate in memory of someone?", "Yes. Many supporters give Sadaqah Jariyah on behalf of a family member or loved one who has passed away. You can choose a project and set your intention through MATW."],
   ["Can I contribute without funding a full project?", "Yes. You can contribute any amount towards eligible projects. Your donation can be combined with the generosity of other supporters to help complete a water well, build a masjid, provide food or support another humanitarian initiative."],
 ];
+
+const chapterItems = ["A life of success", "The turning point", "From reflection to action", "The birth of MATW", "His final wish", "The legacy lives on", "Ten years of impact", "Continue the legacy"];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,6 +56,27 @@ export default function Home() {
         </div>
         {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><a href="#story" onClick={closeMenu}>His story</a><a href="#legacy" onClick={closeMenu}>The legacy</a><a href="#impact" onClick={closeMenu}>Impact</a><a href="#continue" onClick={closeMenu}>Continue it</a><a href="#faq" onClick={closeMenu}>FAQ</a><a className="button button-pink" href={MATW} target="_blank" rel="noreferrer">Donate through MATW</a></nav>}
       </header>
+
+      <LineSidebar
+        items={chapterItems}
+        accentColor="#9fe4f4"
+        textColor="rgba(255,255,255,.56)"
+        markerColor="rgba(159,228,244,.42)"
+        showIndex
+        showMarker
+        proximityRadius={100}
+        maxShift={30}
+        falloff="smooth"
+        markerLength={52}
+        markerGap={0}
+        tickScale={0.5}
+        scaleTick
+        itemGap={20}
+        fontSize={0.72}
+        smoothing={100}
+        defaultActive={0}
+        onItemClick={(_, label) => { const chapter = Array.from(document.querySelectorAll<HTMLElement>(".section-index")).find(element => element.textContent?.includes(label)); chapter?.closest("section")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}
+      />
 
       <section className="hero" id="top">
         <div className="hero-image" aria-hidden="true" /><div className="hero-overlay" aria-hidden="true" />
