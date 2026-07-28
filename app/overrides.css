@@ -280,3 +280,13 @@
 .chapter-five{background:var(--paper);color:var(--ink)}
 .chapter-five .light-copy{color:#45516a}.chapter-five .light-copy strong{color:var(--ink)}.chapter-five .creed{border-color:var(--line);color:var(--ink)}.chapter-five .creed li{border-color:var(--line)}
 .chapter-six .section-index{color:var(--sky)}.chapter-six .body-copy{color:rgba(255,255,255,.78)}.chapter-six .body-copy strong{color:#fff}.chapter-six .body-copy a{color:var(--sky)}
+
+/* Chapter 05 needs the same measured pause as the surrounding story chapters. */
+.chapter-five{position:relative;isolation:isolate;overflow:hidden;padding:clamp(104px,12vw,174px) clamp(28px,6vw,88px);background-color:#fff;background-image:radial-gradient(circle at 88% 14%,rgba(159,228,244,.38),transparent 22%),radial-gradient(circle at 9% 86%,rgba(246,3,98,.08),transparent 20%),radial-gradient(rgba(16,43,99,.045) .7px,transparent .7px);background-size:auto,auto,11px 11px}
+.chapter-five:before{content:"";position:absolute;z-index:-1;right:-220px;top:18%;width:520px;height:520px;border:1px solid rgba(47,158,209,.16);border-radius:50%;box-shadow:0 0 0 42px rgba(47,158,209,.035),0 0 0 84px rgba(47,158,209,.025)}
+.chapter-five .section-inner{position:relative}.chapter-five .section-index{color:var(--pink)}.chapter-five h2{max-width:570px}.chapter-five h2 i{color:var(--blue)}
+.chapter-five .video-card{border:1px solid rgba(16,43,99,.12);border-radius:24px;box-shadow:0 28px 65px -34px rgba(8,31,72,.48)}
+.chapter-five .video-card:before{content:"";position:absolute;z-index:1;inset:0;border:1px solid rgba(159,228,244,.7);border-radius:inherit;pointer-events:none}.chapter-five .play-button{z-index:2;box-shadow:0 16px 30px -15px rgba(246,3,98,.75)}
+.chapter-five .creed{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;max-width:830px;margin:clamp(58px,7vw,94px) auto 0;padding:28px 0 0;border-top:1px solid rgba(16,43,99,.16)}
+.chapter-five .creed:before{content:"A reminder that remains";position:absolute;left:0;top:-13px;padding-right:14px;background:#fff;color:var(--blue);font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.chapter-five .creed li{padding:15px 0;border-bottom:1px solid rgba(16,43,99,.12);font-family:var(--display);font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.25}
+@media(max-width:680px){.chapter-five{padding:84px 23px}.chapter-five .creed{grid-template-columns:1fr;gap:0;margin-top:48px}.chapter-five .video-card{margin-top:6px}}
