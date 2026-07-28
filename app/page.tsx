@@ -12,9 +12,6 @@ const heroGalleryItems = [
   { image: "/assets/hero-ali-children.png", text: "" },
   { image: "/assets/ali-banat-child.jpg", text: "" },
   { image: "/assets/matw-community-2.jpg", text: "" },
-  { image: "https://cdn.matwproject.org/static/media/legacy11.81a5d3462eb095e5e34f.png", text: "" },
-  { image: "https://cdn.matwproject.org/static/media/legacy12.753a665c4fe79de4b973.png", text: "" },
-  { image: "https://cdn.matwproject.org/static/media/legacy13.db02f131140dccb74bfa.png", text: "" },
 ];
 
 const projects: Array<{
