@@ -142,6 +142,7 @@ export default function Home() {
   const [cookieOpen, setCookieOpen] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [railOnDark, setRailOnDark] = useState(true);
+  const [showChapterRail, setShowChapterRail] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 35);
@@ -154,9 +155,13 @@ export default function Home() {
     const sections = Array.from(document.querySelectorAll("main > section"));
     const observer = new IntersectionObserver(
       (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("section-in-view");
+        });
         const current = entries.find((entry) => entry.isIntersecting)
           ?.target as HTMLElement | undefined;
         if (!current) return;
+        setShowChapterRail(!current.classList.contains("hero"));
         setRailOnDark(
           current.classList.contains("hero") ||
             current.classList.contains("dark-story") ||
@@ -253,7 +258,7 @@ export default function Home() {
         <div className="hero-circular-gallery" aria-label="Ali Banat and MATW Project image gallery">
           <CircularGallery
             items={heroGalleryItems}
-            bend={1}
+            bend={2.2}
             textColor="#ffffff"
             borderRadius={0.05}
             font="bold 18px Figtree"
@@ -327,7 +332,7 @@ export default function Home() {
 
       <section className="intro section-paper chapter-one" id="story">
         <nav
-          className={`chapter-rail ${railOnDark ? "is-on-dark" : "is-on-light"}`}
+          className={`chapter-rail ${showChapterRail ? "is-visible" : "is-hidden"} ${railOnDark ? "is-on-dark" : "is-on-light"}`}
           aria-label="Story chapters"
         >
           {chapterRailItems.map(([id, label], index) => (
