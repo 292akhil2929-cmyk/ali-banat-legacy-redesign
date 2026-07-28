@@ -112,3 +112,35 @@
 .chapter-rail-label{background:transparent;border:1px solid #fff;color:#fff;mix-blend-mode:difference}
 .chapter-rail-label b{color:#fff}
 .chapter-rail-item:hover .chapter-rail-tick,.chapter-rail-item:focus-visible .chapter-rail-tick{background:#fff}
+
+/* Final polish: quiet, dark hero lighting and a clear two-card composition. */
+.hero-image{background-image:none!important;opacity:1!important;filter:none!important;transform:none!important;background:radial-gradient(circle at 78% 38%,rgba(32,97,147,.22),transparent 34%),radial-gradient(circle at 62% 68%,rgba(0,163,218,.12),transparent 26%),linear-gradient(135deg,#071126 0%,#091a36 54%,#040b19 100%)}
+.hero-overlay{background:linear-gradient(90deg,rgba(4,12,28,.98) 0%,rgba(4,12,28,.91) 49%,rgba(4,12,28,.66) 100%),linear-gradient(0deg,rgba(4,12,28,.9),transparent 62%)}
+.hero-collage{width:min(35vw,430px);height:min(64vh,560px);right:clamp(34px,8vw,126px);transform:translateY(-48%)}
+.hero-photo{box-sizing:border-box;border:1px solid rgba(222,246,248,.55);padding:7px;border-radius:24px;background:rgba(3,13,30,.55);box-shadow:0 24px 60px -35px rgba(0,0,0,.8);animation:hero-photo-in .8s cubic-bezier(.22,1,.36,1) both}
+.hero-photo:hover{border-color:rgba(255,255,255,.92);box-shadow:0 28px 66px -34px rgba(0,0,0,.9)}
+.hero-photo img{border-radius:17px;filter:saturate(.84) contrast(1.03)}
+.hero-photo-founder{top:0;right:0;width:clamp(230px,23vw,330px);height:clamp(300px,43vh,455px);transform:rotate(2deg)}
+.hero-photo-founder img{object-position:center 30%}
+.hero-photo-impact{bottom:0;left:-5%;width:clamp(155px,15vw,215px);height:clamp(190px,25vh,270px);transform:rotate(-6deg)}
+.hero-photo-impact img{object-position:center}
+.hero-photo-detail{display:none!important}
+.hero-photo figcaption{right:15px;bottom:14px;left:15px}
+.hero-photo figcaption strong{font-size:1rem}
+.chapter-one-image{max-width:500px;aspect-ratio:4/5;overflow:hidden;transform:none;border-radius:26px;background:#0a162c;box-shadow:0 28px 70px -38px rgba(6,17,38,.5)}
+.chapter-one-image>img:first-child{border-radius:26px;object-position:center 58%;filter:saturate(.88) contrast(1.02)}
+.chapter-one-image-secondary{display:none!important}
+.chapter-one-image:after{background:linear-gradient(180deg,transparent 45%,rgba(4,14,32,.84))}
+.chapter-rail{left:clamp(12px,2vw,28px);gap:9px;padding:8px 7px;border-radius:999px;mix-blend-mode:normal;transition:color .35s ease,background .35s ease,border-color .35s ease}
+.chapter-rail-item{padding:5px 4px}
+.chapter-rail-tick{width:14px;height:2px;background:currentColor;transition:width .3s cubic-bezier(.22,1,.36,1),background .3s ease}
+.chapter-rail-label{left:34px;padding:8px 11px;border:0;border-radius:999px;font-size:.62rem;letter-spacing:.1em;mix-blend-mode:normal;box-shadow:0 12px 30px -18px rgba(0,0,0,.5)}
+.chapter-rail.is-on-dark{color:#f7fbfb}
+.chapter-rail.is-on-dark .chapter-rail-label{background:rgba(5,14,31,.94);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.chapter-rail.is-on-light{color:#08152c}
+.chapter-rail.is-on-light .chapter-rail-label{background:#fff;color:#08152c;border:1px solid rgba(8,21,44,.12)}
+.chapter-rail-item:hover,.chapter-rail-item:focus-visible{background:transparent}
+.chapter-rail-item:hover .chapter-rail-tick,.chapter-rail-item:focus-visible .chapter-rail-tick{width:25px;background:currentColor}
+.chapter-rail-item:focus-visible{outline:1px solid currentColor;outline-offset:5px}
+@media(max-width:900px){.hero-collage{right:28px;opacity:.92}.hero-photo-founder{width:260px;height:350px}.hero-photo-impact{width:165px;height:205px}}
+@media(max-width:680px){.hero-collage{width:178px;height:235px;right:12px;bottom:22px;transform:none}.hero-photo-founder{width:132px;height:185px}.hero-photo-impact{width:92px;height:112px;left:-5px}.hero-photo{padding:4px;border-radius:15px}.hero-photo img{border-radius:11px}.chapter-one-image{aspect-ratio:4/5;max-width:none}.chapter-one-subtitle{font-size:.82rem}.chapter-one-subtitle span{font-size:.72rem}}
