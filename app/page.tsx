@@ -1,8 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import CircularGallery from "../components/CircularGallery";
 
 const MATW = "https://matwproject.org/";
+
+const heroGalleryItems = [
+  { image: "/assets/matw-ali-banat.jpg", text: "Founder · Ali Banat" },
+  { image: "/assets/ali-banat-child.jpg", text: "MATW Project · Service" },
+  { image: "/assets/matw-community-2.jpg", text: "Community · Hope in action" },
+  { image: "/assets/matw-legacy-children.png", text: "Orphan care · Dignity" },
+  { image: "/assets/matw-legacy-community.png", text: "The legacy · Continues" },
+  { image: "/assets/matw-ali-message.jpg", text: "Purpose · A final message" },
+];
 
 const projects: Array<{
   tag: string;
@@ -240,40 +250,16 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-image" aria-hidden="true" />
         <div className="hero-overlay" aria-hidden="true" />
-        <div
-          className="hero-collage"
-          aria-label="Ali Banat and the humanitarian work of MATW Project"
-        >
-          <figure className="hero-photo hero-photo-founder">
-            <img
-              src="/assets/matw-ali-banat.jpg"
-              alt="Ali Banat speaking about the humanitarian mission he founded"
-            />
-            <figcaption>
-              <span>Founder</span>
-              <strong>Ali Banat</strong>
-            </figcaption>
-          </figure>
-          <figure className="hero-photo hero-photo-impact">
-            <img
-              src="/assets/matw-community-2.jpg"
-              alt="Children supported through MATW humanitarian work"
-            />
-            <figcaption>
-              <span>MATW Project</span>
-              <strong>Hope in action</strong>
-            </figcaption>
-          </figure>
-          <figure className="hero-photo hero-photo-detail">
-            <img
-              src="/assets/ali-banat-child.jpg"
-              alt="Ali Banat with a child during his humanitarian work"
-            />
-            <figcaption>
-              <span>His purpose</span>
-              <strong>People first</strong>
-            </figcaption>
-          </figure>
+        <div className="hero-circular-gallery" aria-label="Ali Banat and MATW Project image gallery">
+          <CircularGallery
+            items={heroGalleryItems}
+            bend={1}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            font="bold 18px Figtree"
+            scrollEase={0.05}
+            scrollSpeed={2}
+          />
         </div>
         <div className="hero-content" id="main">
           <p className="eyebrow eyebrow-light">
