@@ -55,6 +55,9 @@
 @media(max-width:1100px){.chapter-rail{left:12px}.chapter-rail-label{left:18px;font-size:.62rem}}
 @media(max-width:680px){.chapter-rail{display:none}.chapter-one-image{max-width:none;margin-top:38px}.chapter-one-grid{gap:55px}}
 
+/* Keep the hero focused on the two-photo collage; remove the duplicate rear visual. */
+.hero-visual{display:none!important}
+
 /* Figma-inspired hero image study using MATW's own legacy photography. */
 .hero-visual{position:absolute;z-index:1;top:15%;right:5%;width:min(39vw,520px);height:min(66vh,610px);pointer-events:none}
 .hero-visual-frame{position:absolute;inset:5% 3% 8% 12%;border:1px solid rgba(159,228,244,.32);background:rgba(0,163,218,.07);transform:rotate(4deg)}
