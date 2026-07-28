@@ -219,6 +219,24 @@
 @media(prefers-reduced-motion:reduce){.impact-section:before{transition:none}.impact-section.section-in-view:before{opacity:.2;transform:none}}
 .impact-stats div{position:relative}
 
+/* Chapter 07 milestones: an ordered, left-to-right reveal that mirrors the story's progression. */
+@media(min-width:701px){
+  .impact-section .impact-timeline li{position:relative;overflow:hidden;border-top:0;padding-top:21px}
+  .impact-section .impact-timeline li:after{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,var(--sky),rgba(145,225,246,.2));opacity:0;transform:scaleX(0);transform-origin:left center}
+  .impact-section .impact-timeline li>span,.impact-section .impact-timeline li>div{opacity:0;transform:translateY(18px)}
+  .impact-section.section-in-view .impact-timeline li:after{animation:impact-timeline-rule .72s cubic-bezier(.22,1,.36,1) forwards}
+  .impact-section.section-in-view .impact-timeline li>span,.impact-section.section-in-view .impact-timeline li>div{animation:impact-timeline-rise .62s cubic-bezier(.22,1,.36,1) forwards}
+  .impact-section.section-in-view .impact-timeline li:nth-child(1):after{animation-delay:.1s}.impact-section.section-in-view .impact-timeline li:nth-child(1)>span{animation-delay:.27s}.impact-section.section-in-view .impact-timeline li:nth-child(1)>div{animation-delay:.37s}
+  .impact-section.section-in-view .impact-timeline li:nth-child(2):after{animation-delay:.22s}.impact-section.section-in-view .impact-timeline li:nth-child(2)>span{animation-delay:.39s}.impact-section.section-in-view .impact-timeline li:nth-child(2)>div{animation-delay:.49s}
+  .impact-section.section-in-view .impact-timeline li:nth-child(3):after{animation-delay:.34s}.impact-section.section-in-view .impact-timeline li:nth-child(3)>span{animation-delay:.51s}.impact-section.section-in-view .impact-timeline li:nth-child(3)>div{animation-delay:.61s}
+  .impact-section.section-in-view .impact-timeline li:nth-child(4):after{animation-delay:.46s}.impact-section.section-in-view .impact-timeline li:nth-child(4)>span{animation-delay:.63s}.impact-section.section-in-view .impact-timeline li:nth-child(4)>div{animation-delay:.73s}
+  .impact-section.section-in-view .impact-timeline li:nth-child(5):after{animation-delay:.58s}.impact-section.section-in-view .impact-timeline li:nth-child(5)>span{animation-delay:.75s}.impact-section.section-in-view .impact-timeline li:nth-child(5)>div{animation-delay:.85s}
+  .impact-section .impact-timeline li:hover h3{color:var(--sky);transition:color .25s ease}
+}
+@keyframes impact-timeline-rule{to{opacity:1;transform:scaleX(1)}}
+@keyframes impact-timeline-rise{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.impact-section .impact-timeline li:after,.impact-section .impact-timeline li>span,.impact-section .impact-timeline li>div{opacity:1!important;transform:none!important;animation:none!important}}
+
 /* MATW desktop composition: let the story breathe across the viewport at 100%. */
 @media(min-width:701px){
   .impact-section{padding:clamp(110px,9vw,150px) 6vw;background:#102b63}
