@@ -89,6 +89,10 @@ export default function Home() {
             <img src="/assets/matw-community-2.jpg" alt="Children supported through MATW humanitarian work" />
             <figcaption><span>MATW Project</span><strong>Hope in action</strong></figcaption>
           </figure>
+          <figure className="hero-photo hero-photo-detail">
+            <img src="/assets/ali-banat-child.jpg" alt="Ali Banat with a child during his humanitarian work" />
+            <figcaption><span>His purpose</span><strong>People first</strong></figcaption>
+          </figure>
         </div>
         <div className="hero-content" id="main">
           <p className="eyebrow eyebrow-light">The story of Ali Banat &amp; MATW Project</p>

@@ -152,3 +152,33 @@
   .hero-photo-founder{width:clamp(270px,26vw,375px)!important;height:clamp(360px,49vh,510px)!important;right:0;z-index:2}
   .hero-photo-impact{width:clamp(125px,12vw,178px)!important;height:clamp(160px,21vh,232px)!important;bottom:-1%;left:-10%;z-index:3}
 }
+
+/* Three equal story cards: playful overlap, but a calm composition. */
+.hero-image{background:
+  radial-gradient(ellipse at 83% 27%,rgba(37,135,181,.22),transparent 28%),
+  radial-gradient(circle at 67% 72%,rgba(8,187,201,.12),transparent 19%),
+  repeating-radial-gradient(circle at 76% 46%,rgba(180,237,241,.16) 0 1px,transparent 1px 24px),
+  linear-gradient(135deg,#071126 0%,#0a1c3a 55%,#040b19 100%)!important}
+.hero-image:before,.hero-image:after{content:"";position:absolute;border:1px solid rgba(142,220,231,.2);border-radius:50%;pointer-events:none}
+.hero-image:before{width:440px;height:440px;right:-80px;top:50%;transform:translateY(-50%)}
+.hero-image:after{width:650px;height:650px;right:-180px;top:50%;transform:translateY(-50%)}
+.hero-collage{width:min(39vw,500px);height:min(70vh,590px);right:clamp(26px,6vw,100px);transform:translateY(-47%);pointer-events:auto}
+.hero-photo{width:clamp(178px,17vw,225px)!important;height:clamp(225px,30vh,295px)!important;padding:5px;border-color:rgba(220,247,248,.5);border-radius:22px;background:rgba(4,15,33,.7);box-shadow:0 22px 55px -28px rgba(0,0,0,.9);transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s ease,box-shadow .3s ease}
+.hero-photo img{border-radius:16px}
+.hero-photo:hover{border-color:#fff;box-shadow:0 30px 64px -26px rgba(0,0,0,.95)}
+.hero-photo-founder{top:1%;right:10%;left:auto;bottom:auto;z-index:3;transform:rotate(4deg)}
+.hero-photo-founder:hover{transform:translateY(-10px) rotate(1deg)}
+.hero-photo-impact{top:auto;right:1%;bottom:1%;left:auto;z-index:4;transform:rotate(5deg)}
+.hero-photo-impact:hover{transform:translateY(-10px) rotate(2deg)}
+.hero-photo-detail{display:block!important;top:20%;right:auto;bottom:auto;left:0;z-index:2;transform:rotate(-6deg);animation-delay:.16s}
+.hero-photo-detail:hover{transform:translateY(-10px) rotate(-2deg)}
+.hero-photo-detail img{object-position:center 52%}
+@media(max-width:680px){
+  .hero-image:before{width:280px;height:280px;right:-110px}.hero-image:after{display:none}
+  .hero-collage{width:230px;height:285px;right:6px;bottom:18px;transform:none}
+  .hero-photo{width:112px!important;height:142px!important;padding:4px;border-radius:16px}
+  .hero-photo img{border-radius:11px}
+  .hero-photo-founder{top:0;right:3%;left:auto;bottom:auto}
+  .hero-photo-detail{top:25%;left:0;right:auto;bottom:auto}
+  .hero-photo-impact{right:0;bottom:0;left:auto;top:auto}
+}
