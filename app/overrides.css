@@ -290,3 +290,23 @@
 .chapter-five .creed{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;max-width:830px;margin:clamp(58px,7vw,94px) auto 0;padding:28px 0 0;border-top:1px solid rgba(16,43,99,.16)}
 .chapter-five .creed:before{content:"A reminder that remains";position:absolute;left:0;top:-13px;padding-right:14px;background:#fff;color:var(--blue);font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.chapter-five .creed li{padding:15px 0;border-bottom:1px solid rgba(16,43,99,.12);font-family:var(--display);font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.25}
 @media(max-width:680px){.chapter-five{padding:84px 23px}.chapter-five .creed{grid-template-columns:1fr;gap:0;margin-top:48px}.chapter-five .video-card{margin-top:6px}}
+
+/* Timeline experiment: a persistent story compass that expands into the full chapter title. */
+@media(min-width:1101px){
+  .chapter-rail{position:fixed;top:50%;left:clamp(22px,3vw,58px);z-index:40;display:flex!important;gap:0;width:clamp(180px,15vw,235px);padding:32px 0;transform:translateY(-50%);color:#9fe4f4;mix-blend-mode:normal}
+  .chapter-rail:before{content:"THE STORY";position:absolute;top:0;left:0;color:currentColor;font-size:.58rem;font-weight:800;letter-spacing:.2em;opacity:.62}
+  .chapter-rail:after{content:"01 — 08";position:absolute;bottom:0;left:0;color:currentColor;font-family:var(--display);font-size:.82rem;letter-spacing:.1em;opacity:.62}
+  .chapter-rail.is-on-light{color:#102b63}.chapter-rail.is-on-dark{color:#9fe4f4}
+  .chapter-rail-item{position:relative;z-index:2;display:grid;grid-template-columns:18px 1fr;align-items:center;gap:13px;min-height:38px;padding:2px 0;color:currentColor;text-decoration:none;opacity:.48;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1)}
+  .chapter-rail-tick{width:9px;height:9px;border:1px solid currentColor;border-radius:50%;background:var(--navy);box-shadow:none;transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s ease,box-shadow .35s ease}
+  .chapter-rail-label{position:static;display:flex;align-items:baseline;gap:8px;width:auto;padding:0;background:transparent!important;border:0!important;box-shadow:none!important;color:currentColor!important;font-size:.62rem;letter-spacing:.08em;line-height:1.2;opacity:1;transform:none;pointer-events:none;text-transform:uppercase;transition:font-size .35s ease,opacity .35s ease}
+  .chapter-rail-label b{color:currentColor;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.62rem}
+  .chapter-rail-item:hover,.chapter-rail-item:focus-visible,.chapter-rail-item.is-active{opacity:1;transform:translateX(8px);background:transparent}
+  .chapter-rail-item.is-active .chapter-rail-tick{background:var(--pink);border-color:var(--pink);box-shadow:0 0 0 5px rgba(246,3,98,.15);transform:scale(1.15)}
+  .chapter-rail-item.is-active .chapter-rail-label{font-size:.74rem;font-weight:800;letter-spacing:.11em}.chapter-rail-item:not(.is-active) .chapter-rail-label{max-width:170px;white-space:normal}
+  .chapter-rail-progress{position:absolute;z-index:1;top:32px;left:4px;width:1px;background:linear-gradient(to bottom,var(--sky),var(--blue) 55%,var(--pink));transform-origin:top;transition:height .8s cubic-bezier(.22,1,.36,1)}
+  main>section:not(.hero){padding-left:clamp(228px,20vw,310px)!important;padding-right:clamp(42px,7vw,112px)!important}
+  main>section:not(.hero) .section-inner,main>section:not(.hero) .content-grid,main>section:not(.hero) .impact-inner,main>section:not(.hero) .wide-inner,main>section:not(.hero) .narrow-copy,main>section:not(.hero) .final-cta>div{max-width:1160px}
+}
+@media(max-width:1100px){.chapter-rail{display:none!important}}
+@media(prefers-reduced-motion:reduce){.chapter-rail-item,.chapter-rail-progress{transition:none!important}}

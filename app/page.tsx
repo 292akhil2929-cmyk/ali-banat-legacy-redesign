@@ -134,9 +134,9 @@ const chapterRailItems = [
   ["story", "A life of success"],
   ["turning-point", "The turning point"],
   ["legacy", "From reflection to action"],
-  ["legacy", "The birth of MATW"],
-  ["turning-point", "His final wish"],
-  ["story", "The legacy lives on"],
+  ["birth-matw", "The birth of MATW"],
+  ["final-wish", "His final wish"],
+  ["legacy-lives", "The legacy lives on"],
   ["impact", "Ten years of impact"],
   ["continue", "Continue the legacy"],
 ];
@@ -147,6 +147,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [railOnDark, setRailOnDark] = useState(true);
   const [showChapterRail, setShowChapterRail] = useState(false);
+  const [activeChapter, setActiveChapter] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 35);
@@ -165,6 +166,8 @@ export default function Home() {
         const current = entries.find((entry) => entry.isIntersecting)
           ?.target as HTMLElement | undefined;
         if (!current) return;
+        const chapterIndex = chapterRailItems.findIndex(([id]) => id === current.id);
+        if (chapterIndex >= 0) setActiveChapter(chapterIndex);
         setShowChapterRail(!current.classList.contains("hero"));
         setRailOnDark(
           current.classList.contains("hero") ||
@@ -339,8 +342,9 @@ export default function Home() {
           className={`chapter-rail ${showChapterRail ? "is-visible" : "is-hidden"} ${railOnDark ? "is-on-dark" : "is-on-light"}`}
           aria-label="Story chapters"
         >
+          <span className="chapter-rail-progress" style={{ height: `${((activeChapter + 1) / chapterRailItems.length) * 100}%` }} aria-hidden="true" />
           {chapterRailItems.map(([id, label], index) => (
-            <a className="chapter-rail-item" href={`#${id}`} key={id}>
+            <a className={`chapter-rail-item ${activeChapter === index ? "is-active" : ""}`} href={`#${id}`} key={id}>
               <span className="chapter-rail-tick" />
               <span className="chapter-rail-label">
                 <b>{String(index + 1).padStart(2, "0")}</b>
@@ -506,7 +510,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dark-story chapter-four">
+      <section className="dark-story chapter-four" id="birth-matw">
         <div className="section-inner">
           <p className="section-index section-index-light">
             Chapter 04 — The birth of MATW
@@ -565,7 +569,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-message section-paper chapter-five">
+      <section className="final-message section-paper chapter-five" id="final-wish">
         <div className="section-inner">
           <p className="section-index section-index-light">
             Chapter 05 — His final wish
@@ -616,7 +620,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dark-story chapter-six">
+      <section className="dark-story chapter-six" id="legacy-lives">
         <div className="content-grid">
           <div>
             <p className="section-index">Chapter 06 — The legacy lives on</p>
