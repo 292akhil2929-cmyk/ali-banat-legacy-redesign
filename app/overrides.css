@@ -97,3 +97,18 @@
 .hero-photo-founder{transform:rotate(2.5deg)}
 .hero-photo-impact{width:clamp(185px,18vw,270px);height:clamp(190px,27vh,300px);transform:rotate(-3deg)}
 @media(max-width:680px){.hero-collage{width:190px;height:250px;right:12px;bottom:24px;transform:none}.hero-photo{width:132px;height:188px;border-width:5px;border-radius:18px}.hero-photo-impact{width:116px;height:132px}}
+
+/* Animated editorial border and third hero image. */
+.hero-photo{border:0;padding:8px;background:conic-gradient(from 0deg,#fff,#9fe4f4,#f50072,#fff);animation:hero-photo-in .9s cubic-bezier(.22,1,.36,1) both,hero-border-spin 7s linear infinite}
+.hero-photo img{border-radius:20px}
+.hero-photo-detail{top:24%;left:16%;z-index:4;width:clamp(145px,14vw,205px);height:clamp(185px,25vh,285px);transform:rotate(7deg);animation-delay:.35s}
+.hero-photo-detail img{object-position:center 35%}
+@keyframes hero-border-spin{to{background:conic-gradient(from 360deg,#fff,#9fe4f4,#f50072,#fff)}}
+.chapter-one-subtitle{margin:24px 0 0;color:var(--blue);font-size:.9rem;line-height:1.55;letter-spacing:.02em}
+.chapter-one-subtitle span{color:#69758b;font-size:.78rem}
+.chapter-rail{mix-blend-mode:difference}
+.chapter-rail-item:hover,.chapter-rail-item:focus-visible{background:transparent}
+.chapter-rail-tick{background:#fff}
+.chapter-rail-label{background:transparent;border:1px solid #fff;color:#fff;mix-blend-mode:difference}
+.chapter-rail-label b{color:#fff}
+.chapter-rail-item:hover .chapter-rail-tick,.chapter-rail-item:focus-visible .chapter-rail-tick{background:#fff}
