@@ -521,7 +521,7 @@ export default function Home() {
           <div className="story-two-col">
             <div>
               <h2>
-                A mission for Muslims <i>around the world.</i>
+                The birth <i>of MATW.</i>
               </h2>
             </div>
             <div className="light-copy">
