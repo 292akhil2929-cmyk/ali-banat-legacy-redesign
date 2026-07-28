@@ -182,3 +182,11 @@
   .hero-photo-detail{top:25%;left:0;right:auto;bottom:auto}
   .hero-photo-impact{right:0;bottom:0;left:auto;top:auto}
 }
+
+/* Chapter 07 onward: reference-complete content, tuned to this site’s calm editorial system. */
+.impact-timeline{grid-template-columns:repeat(5,1fr)}
+.impact-stats strong{font-size:clamp(1.9rem,3.3vw,3.8rem)}
+.impact-foot{align-items:flex-start;flex-wrap:wrap}.impact-foot>span{max-width:430px}.impact-foot a{white-space:nowrap}
+.project-card{min-height:360px}.project-quote{margin:2px 0 21px;padding:0;border:0;color:#52617a;font-family:var(--display);font-size:1rem;line-height:1.35}.project-quote cite{display:block;margin-top:7px;color:#758198;font-family:var(--body);font-size:.68rem;font-style:normal;letter-spacing:.05em}.tone-navy .project-quote{color:rgba(255,255,255,.88)}.tone-navy .project-quote cite{color:rgba(255,255,255,.55)}.project-sub-link{margin-top:12px;color:inherit;font-size:.78rem;font-weight:700;text-decoration:none}.project-sub-link:hover{text-decoration:underline}.final-project-link{display:inline-flex;margin:20px 0 0}.final-cta .dua{margin-top:42px}.footer-inner{grid-template-columns:1.65fr 1fr 1fr 1fr}
+@media(max-width:900px){.impact-timeline{grid-template-columns:repeat(3,1fr)}.footer-inner{grid-template-columns:2fr 1fr 1fr}}
+@media(max-width:680px){.impact-timeline{grid-template-columns:1fr}.project-card{min-height:0}.footer-inner{grid-template-columns:1fr}.impact-foot a{white-space:normal}}
