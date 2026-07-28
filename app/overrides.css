@@ -218,3 +218,40 @@
 .project-quote,.project-note{min-height:58px;margin:4px 0 12px;padding:8px 9px;border-left:1px solid var(--blue);background:#eaf8fd;color:#17365e;font-family:var(--display);font-size:.58rem;line-height:1.4}.project-quote{display:flex;flex-direction:column;justify-content:center}.project-quote cite{margin-top:3px;color:#5c708b;font-family:var(--body);font-size:.42rem;font-style:normal}.project-note{display:flex;flex-direction:column;justify-content:center;gap:3px}.project-note span{color:var(--blue);font-family:var(--body);font-size:.42rem;font-style:normal;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.project-note em{font-style:italic}.project-card{min-height:252px}
 @media(prefers-reduced-motion:reduce){.impact-section:before{transition:none}.impact-section.section-in-view:before{opacity:.2;transform:none}}
 .impact-stats div{position:relative}
+
+/* MATW desktop composition: let the story breathe across the viewport at 100%. */
+@media(min-width:901px){
+  .impact-section{padding:clamp(110px,9vw,150px) 6vw;background:#102b63}
+  .impact-inner{max-width:1120px}
+  .impact-heading{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);gap:clamp(70px,9vw,150px);align-items:end}
+  .impact-heading h2{max-width:650px;font-size:clamp(3.6rem,6vw,6.2rem)}
+  .impact-heading>p:last-child{max-width:450px;margin:0 0 8px;font-size:1rem;line-height:1.75}
+  .impact-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin-top:82px;padding:0}
+  .impact-timeline:before{display:none}
+  .impact-timeline li{border-top:1px solid rgba(145,225,246,.6);padding:20px 10px 0 0}
+  .impact-timeline li:before{display:none}
+  .impact-timeline li>span{font-size:.66rem}
+  .impact-timeline h3{font-size:1.45rem;margin-top:17px}
+  .impact-timeline p{font-size:.84rem;line-height:1.65}
+  .impact-stats{margin-top:70px;gap:14px}
+  .impact-stats div{min-height:124px;padding:22px 16px 16px;text-align:left;border-color:rgba(145,225,246,.34)}
+  .impact-stats strong{font-size:clamp(2rem,3.6vw,3.8rem)}
+  .impact-stats span{font-size:.7rem}
+  .give-section{padding:clamp(110px,9vw,150px) 6vw}
+  .give-section .wide-inner{max-width:1120px}
+  .give-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.65fr);gap:clamp(70px,9vw,150px);align-items:end}
+  .give-heading h2{max-width:600px;font-size:clamp(3.6rem,6vw,6.2rem)}
+  .give-heading>p{max-width:430px;margin:0 0 8px;font-size:1rem;line-height:1.75}
+  .give-intro{max-width:610px;margin-top:42px;font-size:.95rem}
+  .project-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:48px}
+  .project-card{min-height:380px;padding:26px 23px 22px}
+  .project-card h3{font-size:1.5rem}
+  .project-card p{font-size:.84rem}
+  .project-quote,.project-note{min-height:80px;font-size:.72rem}
+  .trust-section{padding:clamp(110px,10vw,160px) 6vw}
+  .trust-section .content-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.75fr);gap:clamp(70px,9vw,150px);max-width:1120px}
+  .trust-section h2{font-size:clamp(3.6rem,6vw,6.2rem)}
+  .trust-section .body-copy{margin-top:0;font-size:1rem;line-height:1.75}
+  .trust-list{gap:18px 25px;margin:35px 0}
+  .trust-list li{font-size:.78rem}
+}
