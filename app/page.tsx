@@ -9,7 +9,7 @@ const MATW = "https://matwproject.org/";
 const heroGalleryItems = [
   { image: "/assets/hero-ali-portrait-clean.jpg", text: "" },
   { image: "/assets/hero-matw-food-service.png", text: "" },
-  { image: "/assets/hero-ali-children.png", text: "" },
+  { image: "/assets/hero-ali-children.jpg", text: "" },
   { image: "/assets/ali-banat-child.jpg", text: "" },
   { image: "/assets/matw-community-2.jpg", text: "" },
 ];
