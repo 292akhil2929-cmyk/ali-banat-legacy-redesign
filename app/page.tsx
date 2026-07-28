@@ -59,11 +59,11 @@ export default function Home() {
         <div className="hero-image" aria-hidden="true" /><div className="hero-overlay" aria-hidden="true" />
         <div className="hero-collage" aria-label="Ali Banat and the humanitarian work of MATW Project">
           <figure className="hero-photo hero-photo-founder">
-            <img src="/assets/matw-legacy-children.png" alt="Ali Banat with children supported through his humanitarian mission" />
+            <img src="/assets/matw-ali-banat.jpg" alt="Ali Banat speaking about the humanitarian mission he founded" />
             <figcaption><span>Founder</span><strong>Ali Banat</strong></figcaption>
           </figure>
           <figure className="hero-photo hero-photo-impact">
-            <img src="/assets/matw-legacy-community.png" alt="Ali Banat surrounded by children in a MATW community" />
+            <img src="/assets/matw-community-2.jpg" alt="Children supported through MATW humanitarian work" />
             <figcaption><span>MATW Project</span><strong>Hope in action</strong></figcaption>
           </figure>
         </div>
@@ -76,8 +76,8 @@ export default function Home() {
         </div>
         <div className="hero-visual" aria-label="Ali Banat serving children through the MATW mission">
           <div className="hero-visual-frame" aria-hidden="true" />
-          <img className="hero-visual-main" src="/assets/matw-legacy-children.png" alt="Ali Banat with children supported through his humanitarian mission" />
-          <img className="hero-visual-secondary" src="/assets/matw-legacy-community.png" alt="Ali Banat surrounded by children in a MATW community" />
+          <img className="hero-visual-main" src="/assets/matw-ali-banat.jpg" alt="Ali Banat speaking about the humanitarian mission he founded" />
+          <img className="hero-visual-secondary" src="/assets/matw-community-2.jpg" alt="Children supported through MATW humanitarian work" />
           <p className="hero-visual-caption"><span>Ali Banat</span><br />A mission that continues</p>
         </div>
       </section>
