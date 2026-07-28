@@ -144,3 +144,11 @@
 .chapter-rail-item:focus-visible{outline:1px solid currentColor;outline-offset:5px}
 @media(max-width:900px){.hero-collage{right:28px;opacity:.92}.hero-photo-founder{width:260px;height:350px}.hero-photo-impact{width:165px;height:205px}}
 @media(max-width:680px){.hero-collage{width:178px;height:235px;right:12px;bottom:22px;transform:none}.hero-photo-founder{width:132px;height:185px}.hero-photo-impact{width:92px;height:112px;left:-5px}.hero-photo{padding:4px;border-radius:15px}.hero-photo img{border-radius:11px}.chapter-one-image{aspect-ratio:4/5;max-width:none}.chapter-one-subtitle{font-size:.82rem}.chapter-one-subtitle span{font-size:.72rem}}
+
+/* Keep the collage deliberately asymmetric: a portrait-led story with one quiet human detail. */
+@media (min-width:681px){
+  .hero-photo{padding:5px;border-color:rgba(222,246,248,.38);border-radius:22px}
+  .hero-photo img{border-radius:16px}
+  .hero-photo-founder{width:clamp(270px,26vw,375px)!important;height:clamp(360px,49vh,510px)!important;right:0;z-index:2}
+  .hero-photo-impact{width:clamp(125px,12vw,178px)!important;height:clamp(160px,21vh,232px)!important;bottom:-1%;left:-10%;z-index:3}
+}
