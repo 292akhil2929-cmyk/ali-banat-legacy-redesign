@@ -64,7 +64,7 @@
 .hero-collage{width:min(37vw,480px);height:min(69vh,640px);right:clamp(28px,7vw,110px);transform:translateY(-47%)}
 .hero-photo{width:clamp(210px,22vw,320px);height:clamp(250px,39vh,420px);border:10px solid rgba(255,255,255,.96);border-radius:28px;background:#eef6f8;box-shadow:0 30px 70px -26px rgba(0,0,0,.7)}
 .hero-photo img{filter:saturate(.9) contrast(1.02)}
-.hero-photo img{object-fit:contain;padding:12px 12px 30px;background:#eef6f8}
+.hero-photo img{object-fit:contain!important;padding:12px 12px 30px;background:#eef6f8}
 .hero-photo-founder{transform:rotate(2.5deg)}
 .hero-photo-impact{width:clamp(185px,18vw,270px);height:clamp(190px,27vh,300px);transform:rotate(-3deg)}
 .hero-content{padding-left:clamp(148px,15vw,210px)}
