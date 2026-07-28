@@ -59,3 +59,11 @@
 .hero-collage-stamp i{color:var(--sky);font-size:1.05em}
 @keyframes hero-photo-in{from{opacity:0;transform:translateY(28px) rotate(10deg)}to{opacity:1}}
 @media(max-width:680px){.hero-collage{top:auto;right:12px;bottom:24px;width:190px;height:250px;transform:none;opacity:.95}.hero-photo{width:132px;height:188px;border-width:5px}.hero-photo-founder{top:0;right:0}.hero-photo-impact{bottom:0;left:0}.hero-photo figcaption{right:7px;bottom:7px;left:7px;display:block}.hero-photo figcaption span,.hero-photo figcaption strong{display:block}.hero-photo figcaption span{font-size:.45rem}.hero-photo figcaption strong{font-size:.76rem}.hero-collage-stamp{left:-22px;top:42%;width:64px;height:64px;font-size:.58rem}.hero-collage-stamp i{font-size:1em}}
+
+/* Final Givelife-style hierarchy: one dominant photo with a smaller offset overlap. */
+.hero-collage{width:min(37vw,480px);height:min(69vh,640px);right:clamp(28px,7vw,110px);transform:translateY(-47%)}
+.hero-photo{width:clamp(210px,22vw,320px);height:clamp(250px,39vh,420px);border:10px solid rgba(255,255,255,.96);border-radius:28px;background:#eef6f8;box-shadow:0 30px 70px -26px rgba(0,0,0,.7)}
+.hero-photo img{filter:saturate(.9) contrast(1.02)}
+.hero-photo-founder{transform:rotate(2.5deg)}
+.hero-photo-impact{width:clamp(185px,18vw,270px);height:clamp(190px,27vh,300px);transform:rotate(-3deg)}
+@media(max-width:680px){.hero-collage{width:190px;height:250px;right:12px;bottom:24px;transform:none}.hero-photo{width:132px;height:188px;border-width:5px;border-radius:18px}.hero-photo-impact{width:116px;height:132px}}
