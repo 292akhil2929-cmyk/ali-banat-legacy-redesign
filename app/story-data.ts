@@ -11,6 +11,7 @@ export type Chapter = {
   alt: string;
   caption: string;
   quote?: string;
+  quoteAttribution?: string;
   treatment: "portrait" | "film" | "paper" | "orbit" | "branches" | "impact";
 };
 
@@ -18,8 +19,8 @@ export const chapters: Chapter[] = [
   {
     id: "spark",
     number: "01",
-    year: "1982–2015",
-    nav: "The spark of a dream",
+    year: "Before 2015",
+    nav: "A life of success",
     eyebrow: "A life of success",
     title: "Who was",
     accent: "Ali Banat?",
@@ -27,18 +28,20 @@ export const chapters: Chapter[] = [
       "Before his diagnosis, Ali Banat was a successful businessman living in Sydney, Australia. He had worked hard to build a comfortable life and enjoyed many of the things commonly associated with achievement — businesses, luxury vehicles, designer clothing and material security.",
       "From the outside, it looked like success.",
       "But in 2015, Ali received news that would change the direction of his life: a diagnosis of an aggressive form of cancer, and the possibility that his time was limited. The value of everything around him changed. The question was no longer how much he could accumulate.",
+      "Ali understood that wealth was an Amanah. Time was an Amanah. Health was an Amanah. Whatever remained of his life was an opportunity to seek the pleasure of Allah. He began giving away possessions that had once been important to him and focused his attention on people who had far less.",
     ],
     image: "/assets/hero-ali-portrait-clean.jpg",
     alt: "Portrait of Ali Banat",
     caption: "Before the diagnosis — a life that looked complete.",
     quote: "What can I send ahead for my Akhirah?",
+    quoteAttribution: "Ali Banat",
     treatment: "portrait",
   },
   {
     id: "awakening",
     number: "02",
     year: "2015",
-    nav: "A mission takes shape",
+    nav: "The turning point",
     eyebrow: "The turning point",
     title: "He called it",
     accent: "a gift.",
@@ -46,17 +49,18 @@ export const chapters: Chapter[] = [
       "For many people, such a diagnosis would represent only fear, pain and uncertainty. For Ali, it became an awakening. He described his diagnosis as being “gifted with cancer”—not because the illness was easy, but because it awakened him before it was too late.",
       "His message was not that illness should be desired. It was that Allah can place an awakening inside even the most difficult test. This life is temporary, our possessions will remain behind—but the good we do for the sake of Allah can continue long after we leave this world.",
     ],
-    image: "/assets/matw-ali-message.jpg",
-    alt: "Ali Banat speaking during his final years",
+    image: "/assets/hero-ali-portrait-clean.jpg",
+    alt: "A clean portrait of Ali Banat",
     caption: "An awakening before it was too late.",
     quote: "His illness did not take away his purpose. By the mercy of Allah, it revealed it.",
+    quoteAttribution: "Story reflection",
     treatment: "film",
   },
   {
     id: "togo",
     number: "03",
     year: "2015–16",
-    nav: "Answering the call",
+    nav: "From reflection to action",
     eyebrow: "From reflection to action",
     title: "He travelled to Togo—and",
     accent: "could not look away.",
@@ -91,7 +95,7 @@ export const chapters: Chapter[] = [
     id: "faith",
     number: "05",
     year: "2017–18",
-    nav: "Building on faith",
+    nav: "His final wish",
     eyebrow: "His final wish",
     title: "A reminder for those",
     accent: "who remain.",
@@ -109,7 +113,7 @@ export const chapters: Chapter[] = [
     id: "hope",
     number: "06",
     year: "May 2018",
-    nav: "Expanding hope",
+    nav: "The legacy lives on",
     eyebrow: "The legacy lives on",
     title: "Ali returned to Allah.",
     accent: "His mission did not stop.",
@@ -117,17 +121,18 @@ export const chapters: Chapter[] = [
       "Ali Banat passed away in May 2018. But the projects he began continued. The wells continued to provide water. The masjids continued to welcome worshippers. The children continued to receive care. And the people inspired by his story continued to give.",
       "This is the beauty of Sadaqah Jariyah. A person may leave this world, but the reward of their good deeds may continue to reach them—every prayer offered in a masjid they helped build, every sip taken from a well they helped provide, every child educated or cared for because of their generosity.",
     ],
-    image: "/assets/matw-legacy-children.png",
+    image: "/assets/matw-community-2.jpg",
     alt: "Children supported through MATW humanitarian work",
     caption: "The work continues in every life reached.",
     quote: "A legacy is not measured by how long we live. It is measured by what we leave behind.",
+    quoteAttribution: "Legacy reflection",
     treatment: "branches",
   },
   {
     id: "impact",
     number: "07",
     year: "2018–today",
-    nav: "Lives transformed",
+    nav: "Ten years of impact",
     eyebrow: "Ten years of impact",
     title: "From one mission to",
     accent: "a decade of service.",
@@ -144,7 +149,7 @@ export const chapters: Chapter[] = [
     id: "legacy",
     number: "08",
     year: "Tomorrow",
-    nav: "A legacy for generations",
+    nav: "Continue the legacy",
     eyebrow: "Continue the legacy",
     title: "What will you",
     accent: "leave behind?",
@@ -152,19 +157,20 @@ export const chapters: Chapter[] = [
       "Ali’s story was never intended to end with Ali. It was intended to awaken something in the rest of us. You do not need to be wealthy to make a difference. You do not need to fund an entire project alone. You do not need to wait until you feel ready.",
       "Your act may feel small to you. But when it is sincere and accepted by Allah, its reward can be greater than you imagine.",
     ],
-    image: "/assets/matw-legacy-community.png",
-    alt: "A community carrying Ali Banat's legacy forward",
+    image: "/assets/hero-ali-children.jpg",
+    alt: "Ali Banat with children during his humanitarian work",
     caption: "The next chapter belongs to all of us.",
     quote: "A life may end. A legacy continues.",
+    quoteAttribution: "Epilogue",
     treatment: "paper",
   },
 ];
 
 export const impactMetrics = [
-  { value: 18000, suffix: "+", label: "orphans under ongoing care" },
-  { value: 2900, suffix: "+", label: "water wells built" },
-  { value: 100, suffix: "+", label: "masjids constructed" },
-  { value: 1, suffix: "M+", label: "meals and food items distributed" },
+  { value: 60022198, suffix: "", label: "total impact recorded in 2024" },
+  { value: 16425, suffix: "", label: "orphans sponsored in 2024" },
+  { value: 535166, suffix: "", label: "water-well impact in 2024" },
+  { value: 30, suffix: "+", label: "countries reached by MATW teams" },
 ];
 
 export const actions = [
@@ -172,4 +178,42 @@ export const actions = [
   ["Ongoing care", "Support an orphan", "https://matwproject.org/sponsor-an-orphan"],
   ["Faith", "Help build a masjid", "https://matwproject.org/sadaqah-jariyah/build-a-masjid"],
   ["Amanah", "Give your Zakat", "https://matwproject.org/zakat"],
+  ["Immediate relief", "Provide food and water", "https://matwproject.org/food-and-water-aid"],
+  ["Urgent", "Support Gaza", "https://matwproject.org/gaza-emergency"],
+];
+
+export const trustPrinciples = [
+  "100% donation policy",
+  "Field monitoring and completion updates",
+  "Annual impact reporting",
+  "Respect for donor intentions",
+  "Dignified treatment of beneficiaries",
+  "Responsible project selection",
+];
+
+export const commonQuestions = [
+  {
+    question: "Who was Ali Banat?",
+    answer: "Ali Banat was a Sydney businessman and humanitarian who founded Muslims Around The World Project. After a terminal cancer diagnosis in 2015, he redirected his time and wealth toward people in need. He returned to Allah in May 2018, while the mission he began continued.",
+  },
+  {
+    question: "What did “gifted with cancer” mean?",
+    answer: "Ali used the phrase to describe the awakening created by his diagnosis—not to suggest that illness was easy. It changed how he viewed possessions, time and what he could leave for his Hereafter.",
+  },
+  {
+    question: "What does MATW stand for?",
+    answer: "MATW stands for Muslims Around The World. The project was formally founded by Ali Banat in 2016 and has developed into a global humanitarian organisation.",
+  },
+  {
+    question: "What is Sadaqah Jariyah?",
+    answer: "Sadaqah Jariyah is continuing charity: a beneficial act whose reward may continue after the giver has passed away, such as supporting a water project, masjid, education or ongoing care.",
+  },
+  {
+    question: "Can I give in memory of someone?",
+    answer: "MATW offers legacy and Sadaqah Jariyah projects that supporters can dedicate on behalf of a loved one. Project availability and reporting details are available on MATW’s official website.",
+  },
+  {
+    question: "How does MATW describe its 100% policy?",
+    answer: "MATW states that, after merchant and banking fees, donations support direct project costs and/or donor engagement and fundraising reinvested into projects. Read the current policy before donating for the complete terms.",
+  },
 ];

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import CountUp from "./CountUp";
-import { actions, chapters, impactMetrics, type Chapter } from "../app/story-data";
+import { actions, chapters, commonQuestions, impactMetrics, trustPrinciples, type Chapter } from "../app/story-data";
 
 const MATW = "https://matwproject.org/";
 
@@ -63,12 +63,12 @@ function ArchiveImage({ chapter }: { chapter: Chapter }) {
   );
 }
 
-function QuoteMoment({ quote }: { quote: string }) {
+function QuoteMoment({ quote, attribution }: { quote: string; attribution?: string }) {
   return (
     <blockquote className="quote-moment">
       <span aria-hidden="true">“</span>
       <p>{quote}</p>
-      <cite>— Ali Banat Legacy</cite>
+      <cite>— {attribution || "Ali Banat Legacy"}</cite>
     </blockquote>
   );
 }
@@ -88,7 +88,11 @@ function ImpactMoment() {
           </div>
         ))}
       </div>
-      <small>Working figures from the existing site. Confirm MATW’s latest verified cumulative figures before launch.</small>
+      <small>Figures are presented as MATW’s published 2024 impact data. Current totals may change as programmes continue.</small>
+      <div className="impact-source">
+        <span>Verified against MATW’s published 2024 figures</span>
+        <a href="https://matwproject.org/pdf/MATW_General_2024_Achievements_Report_V7.pdf" target="_blank" rel="noreferrer">Read the 2024 achievements report ↗</a>
+      </div>
     </div>
   );
 }
@@ -108,7 +112,7 @@ function ChapterSection({ chapter, index }: { chapter: Chapter; index: number })
           <ArchiveImage chapter={chapter} />
           <div className="chapter-copy reveal">
             {chapter.paragraphs.map((paragraph, pIndex) => <p key={pIndex}>{paragraph}</p>)}
-            {chapter.quote && <QuoteMoment quote={chapter.quote} />}
+            {chapter.quote && <QuoteMoment quote={chapter.quote} attribution={chapter.quoteAttribution} />}
             {chapter.number === "04" && (
               <a className="story-link" href="https://matwproject.org/purpose" target="_blank" rel="noreferrer">
                 Discover the beginning <span>↗</span>
@@ -118,12 +122,35 @@ function ChapterSection({ chapter, index }: { chapter: Chapter; index: number })
         </div>
         {chapter.treatment === "impact" && <ImpactMoment />}
         {chapter.number === "08" && (
-          <div className="legacy-actions" id="donate">
-            {actions.map(([tag, title, href]) => (
-              <a href={href} target="_blank" rel="noreferrer" key={title}>
-                <span>{tag}</span><strong>{title}</strong><i>↗</i>
-              </a>
-            ))}
+          <div className="chapter-eight-archive">
+            <div className="legacy-actions" id="donate">
+              {actions.map(([tag, title, href]) => (
+                <a href={href} target="_blank" rel="noreferrer" key={title}>
+                  <span>{tag}</span><strong>{title}</strong><i>↗</i>
+                </a>
+              ))}
+            </div>
+            <section className="amanah-panel" aria-labelledby="amanah-title">
+              <div>
+                <p>TRUST &amp; TRANSPARENCY</p>
+                <h3 id="amanah-title">A legacy built on <em>Amanah.</em></h3>
+                <p>MATW describes every donation as a trust. Its current policy explains how donations are used, while field updates and annual reports let supporters inspect the work.</p>
+                <a href="https://matwproject.org/our-promise/100-donation-policy" target="_blank" rel="noreferrer">Read the current donation policy ↗</a>
+              </div>
+              <ul>{trustPrinciples.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+            <section className="story-questions" aria-labelledby="questions-title">
+              <p>REFERENCE NOTES</p>
+              <h3 id="questions-title">The story, <em>clearly answered.</em></h3>
+              <div>
+                {commonQuestions.map((item) => (
+                  <details key={item.question}>
+                    <summary>{item.question}<span>+</span></summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
           </div>
         )}
       </div>
@@ -215,7 +242,7 @@ export default function LegacyTimeline() {
         <div className="opening-copy">
           <p className="opening-overline">A journey of faith, compassion and service</p>
           <h1><span>A life that</span><strong>became a legacy.</strong></h1>
-          <div className="opening-name"><i />Ali Banat <small>1982—2018</small></div>
+          <div className="opening-name"><i />Ali Banat <small>Founder of MATW · returned to Allah in 2018</small></div>
         </div>
         <a className="scroll-cue" href="#spark"><span>Scroll to begin</span><i /></a>
         <div className="ignition" aria-hidden="true"><i /><span /></div>
@@ -235,8 +262,8 @@ export default function LegacyTimeline() {
 
       <footer>
         <div><strong>ALI BANAT <span>LEGACY</span></strong><p>Honouring a life of faith, compassion and service.</p></div>
-        <div><a href="https://matwproject.org/about-us" target="_blank" rel="noreferrer">About MATW ↗</a><a href="https://matwproject.org/annual-reports" target="_blank" rel="noreferrer">Impact reports ↗</a></div>
-        <div><a href="https://matwproject.org/contact" target="_blank" rel="noreferrer">Contact ↗</a><a href="https://matwproject.org/faq/" target="_blank" rel="noreferrer">FAQs ↗</a></div>
+        <div><a href="https://matwproject.org/about-us" target="_blank" rel="noreferrer">About MATW ↗</a><a href="https://matwproject.org/annual-reports" target="_blank" rel="noreferrer">Impact reports ↗</a><a href="https://matwproject.org/our-promise/100-donation-policy" target="_blank" rel="noreferrer">Donation policy ↗</a></div>
+        <div><a href="https://matwproject.org/contact" target="_blank" rel="noreferrer">Contact ↗</a><a href="https://matwproject.org/faq/" target="_blank" rel="noreferrer">MATW FAQs ↗</a><a href="https://matwproject.org/purpose" target="_blank" rel="noreferrer">Purpose ↗</a></div>
         <small>© {new Date().getFullYear()} Ali Banat Legacy</small>
       </footer>
     </main>
