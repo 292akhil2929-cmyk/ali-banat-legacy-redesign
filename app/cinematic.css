@@ -287,7 +287,7 @@ footer small { grid-column:1/-1; padding-top:30px; border-top:1px solid rgba(255
 
 @media (max-width: 760px) {
   .custom-cursor,.story-rail { display:none; }
-  .document-nav { left:0; height:70px; padding:0 20px; background:linear-gradient(180deg,rgba(3,10,24,.98),rgba(3,10,24,.65),transparent); }
+  .document-nav { left:0; margin-left:0; height:70px; padding:0 20px; background:linear-gradient(180deg,rgba(3,10,24,.98),rgba(3,10,24,.65),transparent); }
   .document-nav button { display:block; width:42px; height:42px; margin-left:auto; border:0; background:none; color:white; }
   .document-nav button span { display:block; width:23px; height:1px; margin:6px auto; background:currentColor; }
   .document-nav nav { position:absolute; top:62px; right:12px; left:12px; padding:18px; display:none; flex-direction:column; align-items:stretch; gap:16px; background:rgba(7,18,37,.98); border:1px solid rgba(108,168,255,.2); }
