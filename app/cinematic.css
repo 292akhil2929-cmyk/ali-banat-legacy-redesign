@@ -37,13 +37,13 @@ main { position: relative; min-height: 100vh; background: var(--night); }
 .rail-count strong { color: var(--blue-soft); font-family: var(--display); font-size: 1.45rem; font-weight: 400; }
 .rail-count span { color: rgba(244,240,232,.42); font-size: .72rem; }
 
-.life-thread { position: absolute; top: 100vh; bottom: 0; left: calc(clamp(286px,23vw,360px) + 7.5vw); z-index: 8; width: 2px; pointer-events: none; }
+.life-thread { position: absolute; top: 100vh; bottom: 0; left: calc(clamp(286px,23vw,360px) + clamp(42px,4.5vw,72px)); z-index: 8; width: 2px; pointer-events: none; }
 .thread-track,.thread-live { position: absolute; inset: 0 auto 0 0; width: 1px; }
 .thread-track { background: linear-gradient(transparent,rgba(108,168,255,.26) 3%,rgba(240,68,126,.22) 97%,transparent); }
 .thread-live { bottom: auto; max-height: 100%; background: linear-gradient(var(--blue),var(--blue-soft) 48%,var(--pink)); box-shadow: 0 0 15px rgba(67,140,255,.7); transition: height .1s linear; }
 .thread-pulse { position: absolute; left: -4px; width: 9px; height: 9px; border-radius: 50%; background: white; box-shadow: 0 0 0 8px rgba(67,140,255,.1),0 0 30px var(--blue); }
 
-.opening { position: relative; z-index: 2; height: 100svh; min-height: 700px; margin-left: clamp(286px,23vw,360px); overflow: hidden; display: grid; align-items: center; padding: 110px clamp(42px,9vw,160px); isolation: isolate; }
+.opening { position: relative; z-index: 2; height: 100svh; min-height: 700px; margin-left: clamp(286px,23vw,360px); overflow: hidden; display: grid; align-items: center; padding: 110px clamp(42px,7vw,120px) 110px clamp(132px,12vw,190px); isolation: isolate; }
 .opening:after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(circle at 67% 43%,transparent 0,rgba(3,10,24,.1) 22%,rgba(3,10,24,.88) 75%),linear-gradient(90deg,#030a18 8%,transparent 68%); }
 .opening-image { position: absolute; z-index: -2; inset: 0 0 0 32%; overflow: hidden; opacity: .48; mask-image: linear-gradient(90deg,transparent,#000 20%,#000 88%,transparent); }
 .opening-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; filter: saturate(.6) contrast(1.12) brightness(.78); transform: scale(1.06); animation: heroDrift 16s ease-out both; }
@@ -62,16 +62,16 @@ main { position: relative; min-height: 100vh; background: var(--night); }
 .scroll-cue i { display: block; width: 1px; height: 70px; background: linear-gradient(var(--blue),transparent); overflow: hidden; }
 .scroll-cue i:after { content: ""; display: block; width: 1px; height: 22px; background: white; animation: scrollCue 2s ease-in-out infinite; }
 @keyframes scrollCue { from { transform: translateY(-22px); } to { transform: translateY(70px); } }
-.ignition { position: absolute; bottom: 0; left: 7.5vw; width: 1px; height: 21vh; background: linear-gradient(transparent,var(--blue)); }
+.ignition { position: absolute; bottom: 0; left: clamp(42px,4.5vw,72px); width: 1px; height: 21vh; background: linear-gradient(transparent,var(--blue)); }
 .ignition i { position: absolute; bottom: -4px; left: -4px; width: 9px; height: 9px; border-radius: 50%; background: white; box-shadow: 0 0 0 10px rgba(67,140,255,.1),0 0 35px var(--blue); animation: ignite 2.6s ease-in-out infinite; }
 @keyframes ignite { 50% { box-shadow: 0 0 0 18px rgba(67,140,255,0),0 0 45px var(--blue); } }
 
 .chapters { position: relative; z-index: 2; margin-left: clamp(286px,23vw,360px); }
-.story-chapter { position: relative; min-height: 118vh; padding: clamp(110px,13vw,190px) clamp(42px,8vw,140px); background: linear-gradient(135deg,rgba(7,18,37,.96),rgba(3,10,24,.98)); overflow: hidden; isolation: isolate; }
+.story-chapter { position: relative; min-height: 118vh; padding: clamp(130px,14vw,210px) clamp(42px,7vw,120px) clamp(130px,14vw,210px) clamp(132px,12vw,190px); background: linear-gradient(135deg,rgba(7,18,37,.96),rgba(3,10,24,.98)); overflow: hidden; isolation: isolate; }
 .story-chapter:nth-child(even) { background: linear-gradient(145deg,#f1ede5,#f8f5ef); color: #0b1930; }
 .story-chapter:nth-child(3n):before { content: ""; position: absolute; z-index: -1; width: 55vw; height: 55vw; border: 1px solid rgba(108,168,255,.12); border-radius: 50%; right: -25vw; top: 12%; box-shadow: 0 0 0 70px rgba(108,168,255,.025),0 0 0 140px rgba(108,168,255,.018); }
 .chapter-shell { width: min(1180px,100%); margin: 0 auto; }
-.chapter-node { position: absolute; top: 18%; left: calc(7.5vw - 8px); z-index: 9; width: 17px; height: 17px; border: 1px solid var(--blue-soft); border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 8px rgba(67,140,255,.06); transition: .6s; }
+.chapter-node { position: absolute; top: 18%; left: calc(clamp(42px,4.5vw,72px) - 8px); z-index: 9; width: 17px; height: 17px; border: 1px solid var(--blue-soft); border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 8px rgba(67,140,255,.06); transition: .6s; }
 .chapter-node span { position: absolute; top: -34px; left: 50%; color: var(--blue-soft); font-size: .58rem; letter-spacing: .12em; transform: translateX(-50%); }
 .story-chapter.is-active .chapter-node { background: white; box-shadow: 0 0 0 11px rgba(67,140,255,.12),0 0 36px var(--blue); transform: scale(1.12); }
 .chapter-heading { max-width: 980px; margin-bottom: clamp(65px,10vw,130px); }
@@ -255,7 +255,7 @@ footer small { grid-column:1/-1; padding-top:30px; border-top:1px solid rgba(255
   .life-thread { left:calc(86px + 5vw); }
   .ignition { left:5vw; }
   .chapter-node { left:calc(5vw - 8px); }
-  .story-chapter { padding-left:clamp(80px,11vw,130px); }
+  .story-chapter { padding-left:clamp(96px,12vw,132px); }
 }
 
 @media (max-width: 760px) {
@@ -278,9 +278,9 @@ footer small { grid-column:1/-1; padding-top:30px; border-top:1px solid rgba(255
   .scroll-cue span { display:none; }
   .ignition { left:28px; height:15vh; }
   .life-thread { left:28px; }
-  .story-chapter { min-height:0; padding:105px 22px 105px 62px; }
-  .chapter-node { left:20px; top:122px; }
-  .chapter-heading { margin-bottom:55px; }
+  .story-chapter { min-height:0; padding:120px 24px 120px 76px; }
+  .chapter-node { left:20px; top:140px; }
+  .chapter-heading { margin-bottom:64px; }
   .chapter-kicker { gap:14px; margin-bottom:22px; }
   .story-chapter h2 { font-size:clamp(3.4rem,15vw,5.5rem); line-height:.9; }
   .chapter-composition { grid-template-columns:1fr; gap:48px; }
