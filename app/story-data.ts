@@ -193,19 +193,17 @@ export const impactTimeline = [
   { year: "2015", title: "The diagnosis", body: "Ali is diagnosed with an aggressive cancer — and calls it a gift. He begins giving his wealth away." },
   { year: "2015–16", title: "Togo, and the birth of MATW", body: "Ali travels to West Africa and founds Muslims Around The World Project: orphan care, water and a masjid." },
   { year: "2018", title: "Ali returns to Allah", body: "Ali passes away in May 2018. The projects he began keep serving — and his story keeps spreading." },
-  { year: "2018–24", title: "A movement grows", body: "MATW expands into emergency relief, food and water aid, Zakat distribution, healthcare and education across many countries." },
-  { year: "Today", title: "The legacy is still growing", body: "Donors, volunteers, field teams and communities around the world continue what one man began." },
+  { year: "2018–25", title: "A movement grows", body: "MATW expands into emergency relief, food and water aid, Zakat distribution, healthcare and education across many countries." },
+  { year: "2026", title: "The legacy is still growing", body: "Donors, volunteers, field teams and communities around the world continue what one man began." },
 ];
 
 export const impactImages = [
   { src: "/assets/matw-official-community.jpeg", alt: "A child receiving clean water through a MATW-supported project", label: "Clean water" },
-  { src: "/assets/matw-official-support-2.jpeg", alt: "A mother holding a child during a MATW field visit", label: "Family care" },
   { src: "/assets/matw-official-food.jpeg", alt: "MATW field team distributing food boxes", label: "Food relief" },
+  { src: "/assets/matw-official-support-2.jpeg", alt: "A mother holding a child during a MATW field visit", label: "Family care" },
   { src: "/assets/matw-official-orphan.jpg", alt: "A child receiving a family food parcel", label: "Orphan care" },
-  { src: "/assets/hero-matw-food-service.png", alt: "MATW volunteers serving hot meals", label: "Field service" },
   { src: "/assets/matw-official-support-1.jpeg", alt: "A child sheltering beside a fire", label: "Emergency relief" },
   { src: "/assets/matw-official-support-3.jpeg", alt: "A child walking through a conflict-affected neighbourhood", label: "Crisis response" },
-  { src: "/assets/hero-ali-children.jpg", alt: "Ali Banat with children in Togo", label: "The beginning" },
 ];
 
 export const impactMetrics = [

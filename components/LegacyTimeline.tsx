@@ -100,6 +100,11 @@ function ImpactMoment() {
           </figure>
         ))}
       </div>
+      <div className="history-direction" aria-label="MATW legacy timeline from 2015 to 2026">
+        <span>2015</span>
+        <i aria-hidden="true"><b /></i>
+        <strong>2026</strong>
+      </div>
       <div className="impact-history" aria-label="Ali Banat and MATW timeline">
         {impactTimeline.map((event, index) => (
           <article key={event.year}>
