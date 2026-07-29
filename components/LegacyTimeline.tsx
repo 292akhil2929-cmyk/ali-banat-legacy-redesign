@@ -2,7 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import CountUp from "./CountUp";
-import { actions, chapters, commonQuestions, impactMetrics, trustPrinciples, type Chapter } from "../app/story-data";
+import {
+  actions,
+  chapters,
+  commonQuestions,
+  finalReminders,
+  firstActs,
+  impactImages,
+  impactMetrics,
+  impactTimeline,
+  trustPrinciples,
+  type Chapter,
+} from "../app/story-data";
 
 const MATW = "https://matwproject.org/";
 
@@ -76,9 +87,28 @@ function QuoteMoment({ quote, attribution }: { quote: string; attribution?: stri
 function ImpactMoment() {
   return (
     <div className="impact-moment">
-      <div className="impact-map" aria-hidden="true">
-        <span className="world-core" />
-        {Array.from({ length: 10 }, (_, i) => <i key={i} />)}
+      <div className="impact-gallery" aria-label="MATW Project humanitarian work">
+        <div className="impact-gallery-intro">
+          <span>MATW / ON THE FIELD</span>
+          <strong>One mission.<br />Millions of lives.</strong>
+          <p>Real imagery sourced from MATW Project’s official website.</p>
+        </div>
+        {impactImages.map((image, index) => (
+          <figure className={`impact-photo impact-photo-${index + 1}`} key={image.src}>
+            <img src={image.src} alt={image.alt} loading="lazy" />
+            <figcaption><span>{String(index + 1).padStart(2, "0")}</span>{image.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="impact-history" aria-label="Ali Banat and MATW timeline">
+        {impactTimeline.map((event, index) => (
+          <article key={event.year}>
+            <div className="history-marker"><i /><span>{String(index + 1).padStart(2, "0")}</span></div>
+            <p>{event.year}</p>
+            <h3>{event.title}</h3>
+            <div>{event.body}</div>
+          </article>
+        ))}
       </div>
       <div className="metric-stream">
         {impactMetrics.map((metric) => (
@@ -113,6 +143,22 @@ function ChapterSection({ chapter, index }: { chapter: Chapter; index: number })
           <div className="chapter-copy reveal">
             {chapter.paragraphs.map((paragraph, pIndex) => <p key={pIndex}>{paragraph}</p>)}
             {chapter.quote && <QuoteMoment quote={chapter.quote} attribution={chapter.quoteAttribution} />}
+            {chapter.number === "03" && (
+              <div className="first-acts">
+                {firstActs.map((act) => (
+                  <article key={act.title}>
+                    <span>{act.number}</span>
+                    <div><strong>{act.title}</strong><p>{act.body}</p></div>
+                  </article>
+                ))}
+                <small>Those first acts of service became the foundations of something much greater.</small>
+              </div>
+            )}
+            {chapter.number === "05" && (
+              <ol className="final-reminders">
+                {finalReminders.map((reminder) => <li key={reminder}>{reminder}</li>)}
+              </ol>
+            )}
             {chapter.number === "04" && (
               <a className="story-link" href="https://matwproject.org/purpose" target="_blank" rel="noreferrer">
                 Discover the beginning <span>↗</span>
@@ -124,17 +170,22 @@ function ChapterSection({ chapter, index }: { chapter: Chapter; index: number })
         {chapter.number === "08" && (
           <div className="chapter-eight-archive">
             <div className="legacy-actions" id="donate">
-              {actions.map(([tag, title, href]) => (
-                <a href={href} target="_blank" rel="noreferrer" key={title}>
-                  <span>{tag}</span><strong>{title}</strong><i>↗</i>
+              {actions.map((action) => (
+                <a href={action.href} target="_blank" rel="noreferrer" key={action.title}>
+                  <span>{action.tag}</span>
+                  <strong>{action.title}</strong>
+                  <p>{action.description}</p>
+                  {action.quote && <blockquote>{action.quote}<cite>— {action.citation}</cite></blockquote>}
+                  <b>{action.cta} <i>↗</i></b>
                 </a>
               ))}
             </div>
+            <p className="memory-giving">You can give on behalf of someone you love, or in memory of someone who has returned to Allah.</p>
             <section className="amanah-panel" aria-labelledby="amanah-title">
               <div>
                 <p>TRUST &amp; TRANSPARENCY</p>
                 <h3 id="amanah-title">A legacy built on <em>Amanah.</em></h3>
-                <p>MATW describes every donation as a trust. Its current policy explains how donations are used, while field updates and annual reports let supporters inspect the work.</p>
+                <p>Every donation is more than a transaction. It represents someone’s intention, someone’s sacrifice, someone’s hope that Allah will accept their charity. MATW understands that this trust is an Amanah — and the principles that guided Ali’s original mission continue to shape how donations are handled, projects are delivered and impact is reported.</p>
                 <a href="https://matwproject.org/our-promise/100-donation-policy" target="_blank" rel="noreferrer">Read the current donation policy ↗</a>
               </div>
               <ul>{trustPrinciples.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -254,17 +305,23 @@ export default function LegacyTimeline() {
 
       <section className="legacy-finale">
         <p>EPILOGUE</p>
-        <h2><span>A life may end.</span><em>A legacy continues.</em></h2>
+        <h2><span>His story has been written.</span><em>His legacy is still being built.</em></h2>
         <p className="finale-copy">Ali used the time Allah gave him to begin something that would continue beyond his lifetime. Today, that responsibility passes to us.</p>
+        <p className="finale-copy">You may not know how long the impact will continue. You may never meet the people who benefit. But Allah sees every sincere intention — and Allah never allows a good deed to be lost.</p>
+        <div className="finale-dua">
+          <p>May Allah have mercy on our brother Ali Banat, forgive his shortcomings and grant him the highest levels of Jannatul Firdaus.</p>
+          <p>May Allah accept every orphan cared for, every meal provided, every drop of water given and every masjid built through the mission he began as an ongoing source of reward for him.</p>
+          <p>May Allah awaken our hearts before it is too late, and help each of us leave behind deeds that continue benefiting others after we return to Him. Ameen.</p>
+        </div>
         <a href={MATW} target="_blank" rel="noreferrer">Continue the legacy <span>↗</span></a>
         <div className="final-beam" aria-hidden="true"><i /></div>
       </section>
 
       <footer>
         <div><strong>ALI BANAT <span>LEGACY</span></strong><p>Honouring a life of faith, compassion and service.</p></div>
-        <div><a href="https://matwproject.org/about-us" target="_blank" rel="noreferrer">About MATW ↗</a><a href="https://matwproject.org/annual-reports" target="_blank" rel="noreferrer">Impact reports ↗</a><a href="https://matwproject.org/our-promise/100-donation-policy" target="_blank" rel="noreferrer">Donation policy ↗</a></div>
-        <div><a href="https://matwproject.org/contact" target="_blank" rel="noreferrer">Contact ↗</a><a href="https://matwproject.org/faq/" target="_blank" rel="noreferrer">MATW FAQs ↗</a><a href="https://matwproject.org/purpose" target="_blank" rel="noreferrer">Purpose ↗</a></div>
-        <small>© {new Date().getFullYear()} Ali Banat Legacy</small>
+        <div><span className="footer-label">EXPLORE</span><a href="https://matwproject.org/about-us" target="_blank" rel="noreferrer">About MATW ↗</a><a href="https://matwproject.org/annual-reports" target="_blank" rel="noreferrer">Impact reports ↗</a><a href="https://matwproject.org/purpose" target="_blank" rel="noreferrer">MATW’s purpose ↗</a></div>
+        <div><span className="footer-label">INFORMATION &amp; TRUST</span><a href="https://matwproject.org/our-promise/100-donation-policy" target="_blank" rel="noreferrer">Donation policy ↗</a><a href="https://matwproject.org/faq/" target="_blank" rel="noreferrer">MATW FAQs ↗</a><a href="https://matwproject.org/contact" target="_blank" rel="noreferrer">Contact MATW ↗</a></div>
+        <small>Ali Banat Legacy is an initiative connected to MATW Project, the humanitarian organisation founded by Ali Banat. All donations are processed securely on matwproject.org.<br />© {new Date().getFullYear()} Ali Banat Legacy</small>
       </footer>
     </main>
   );
