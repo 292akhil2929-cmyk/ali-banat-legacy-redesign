@@ -8,8 +8,11 @@ main { position: relative; min-height: 100vh; background: var(--night); }
 @keyframes grain { 0% { transform: translate(0,0); } 25% { transform: translate(2%,-3%); } 50% { transform: translate(-3%,2%); } 75% { transform: translate(3%,3%); } 100% { transform: translate(-2%,-2%); } }
 
 .document-nav { position: fixed; top: 0; right: 0; left: clamp(286px, 23vw, 360px); z-index: 50; height: 86px; padding: 0 clamp(28px,5vw,84px); display: flex; align-items: center; justify-content: space-between; color: rgba(244,240,232,.82); background: linear-gradient(180deg,rgba(3,10,24,.88),rgba(3,10,24,0)); }
-.wordmark { display: none; font-size: .67rem; letter-spacing: .19em; font-weight: 600; text-decoration: none; }
-.wordmark span, .rail-brand span, footer strong span { color: var(--blue-soft); }
+.wordmark { display: none; align-items:center; gap:10px; font-size: .67rem; letter-spacing: .19em; font-weight: 600; text-decoration: none; }
+.brand-mark { flex:0 0 auto; width:34px; height:34px; background:url("/assets/matw-logo.png") center/contain no-repeat; filter:drop-shadow(0 0 12px rgba(108,168,255,.22)); opacity:.94; }
+.brand-words { display:flex; flex-direction:column; gap:3px; color:var(--ivory); line-height:1; }
+.brand-words em { color:var(--blue-soft); font-size:.52rem; font-style:normal; letter-spacing:.22em; }
+footer strong span { color: var(--blue-soft); }
 .document-nav nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
 .document-nav nav a { position: relative; font-size: .72rem; letter-spacing: .06em; text-decoration: none; }
 .document-nav nav a:not(.nav-cta):after { content: ""; position: absolute; right: 0; bottom: -6px; left: 0; height: 1px; background: var(--blue-soft); transform: scaleX(0); transform-origin: right; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
@@ -20,7 +23,7 @@ main { position: relative; min-height: 100vh; background: var(--night); }
 
 .story-rail { position: fixed; inset: 0 auto 0 0; z-index: 60; width: clamp(286px,23vw,360px); padding: 50px 28px 42px 68px; background: linear-gradient(145deg,rgba(3,10,24,.985),rgba(7,23,49,.98)); border-right: 1px solid rgba(108,168,255,.18); box-shadow: 34px 0 100px rgba(0,0,0,.22); }
 .story-rail:after { content: ""; position: absolute; inset: 0; opacity: .22; pointer-events: none; background: radial-gradient(circle at 9% 46%,rgba(67,140,255,.35),transparent 26%), linear-gradient(160deg,transparent 60%,rgba(240,68,126,.08)); }
-.rail-brand { position: relative; z-index: 2; display: block; color: var(--ivory); font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-decoration: none; }
+.rail-brand { position: relative; z-index: 2; display:flex; align-items:center; gap:12px; color: var(--ivory); font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-decoration: none; }
 .story-rail nav { position: absolute; top: 118px; right: 28px; bottom: 98px; left: 28px; z-index: 2; display: grid; align-content: space-around; }
 .story-rail nav a { position: relative; display: grid; grid-template-columns: 24px 30px 1fr; align-items: center; gap: 11px; min-height: 52px; color: rgba(231,227,220,.45); text-decoration: none; transition: color .45s, transform .45s, opacity .45s; }
 .story-rail nav a > i { width: 10px; height: 10px; border: 1px solid rgba(108,168,255,.52); border-radius: 50%; background: #071225; transition: .45s; }
@@ -274,7 +277,8 @@ footer small { grid-column:1/-1; padding-top:30px; border-top:1px solid rgba(255
   .rail-count { left:18px;bottom:25px; }.rail-count strong{font-size:1rem}
   .document-nav,.opening,.chapters,.legacy-finale,footer { margin-left:86px; left:auto; }
   .document-nav { left:86px; }
-  .wordmark { display:block; }
+  .wordmark { display:flex; }
+  .wordmark .brand-mark { width:30px; height:30px; }
   .life-thread { left:calc(86px + 5vw); }
   .ignition { left:5vw; }
   .chapter-node { left:calc(5vw - 8px); }

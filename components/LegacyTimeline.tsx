@@ -20,7 +20,10 @@ const MATW = "https://matwproject.org/";
 function ChapterNavigation({ active, progress }: { active: number; progress: number }) {
   return (
     <aside className="story-rail" aria-label="Story chapters">
-      <a className="rail-brand" href="#opening">ALI BANAT <span>LEGACY</span></a>
+      <a className="rail-brand" href="#opening" aria-label="Ali Banat Legacy, return to opening">
+        <span className="brand-mark" aria-hidden="true" />
+        <span className="brand-words">ALI BANAT <em>LEGACY</em></span>
+      </a>
       <div className="rail-line" aria-hidden="true">
         <span style={{ height: `${progress * 100}%` }} />
       </div>
@@ -283,7 +286,10 @@ export default function LegacyTimeline() {
       <ChapterNavigation active={active} progress={progress} />
 
       <header className="document-nav">
-        <a href="#opening" className="wordmark">ALI BANAT <span>LEGACY</span></a>
+        <a href="#opening" className="wordmark" aria-label="Ali Banat Legacy, return to opening">
+          <span className="brand-mark" aria-hidden="true" />
+          <span className="brand-words">ALI BANAT <em>LEGACY</em></span>
+        </a>
         <button aria-label="Toggle chapter menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span />
         </button>
