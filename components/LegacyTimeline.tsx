@@ -110,6 +110,10 @@ function ImpactMoment() {
           </article>
         ))}
       </div>
+      <div className="metric-header">
+        <span>The work, in numbers</span>
+        <p>One intention, carried forward through millions of acts of service.</p>
+      </div>
       <div className="metric-stream">
         {impactMetrics.map((metric) => (
           <div key={metric.label}>
@@ -294,6 +298,13 @@ export default function LegacyTimeline() {
           <p className="opening-overline">A journey of faith, compassion and service</p>
           <h1><span>A life that</span><strong>became a legacy.</strong></h1>
           <div className="opening-name"><i />Ali Banat <small>Founder of MATW · returned to Allah in 2018</small></div>
+          <div className="opening-actions">
+            <a className="opening-support" href={MATW} target="_blank" rel="noreferrer" data-cursor="Support">
+              <span>Support the cause</span>
+              <i aria-hidden="true">↗</i>
+            </a>
+            <small>Continue Ali’s legacy through MATW Project.</small>
+          </div>
         </div>
         <a className="scroll-cue" href="#spark"><span>Scroll to begin</span><i /></a>
         <div className="ignition" aria-hidden="true"><i /><span /></div>
