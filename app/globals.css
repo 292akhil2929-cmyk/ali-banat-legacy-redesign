@@ -17,6 +17,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--night); }
 body { margin: 0; background: var(--night); color: var(--ivory); font-family: var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+h1,h2,h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
 a { color: inherit; }
 button { font: inherit; }
 img { display: block; max-width: 100%; }

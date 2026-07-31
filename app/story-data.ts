@@ -39,7 +39,7 @@ export const chapters: Chapter[] = [
       "Before his diagnosis, Ali was a successful businessman living in Sydney, Australia. He had worked hard to build a comfortable life and enjoyed many of the things commonly associated with achievement — businesses, luxury vehicles, designer clothing and material security.",
       "From the outside, it looked like success.",
       "But in 2015, Ali received news that would change the direction of his life: a diagnosis of an aggressive form of cancer, and the possibility that his time was limited. The value of everything around him changed. The question was no longer how much he could accumulate.",
-      "Ali understood that wealth was an Amanah. Time was an Amanah. Health was an Amanah. Whatever remained of his life was an opportunity to seek the pleasure of Allah. He began giving away possessions that had once been important to him. He did not know how much time he had left — but he knew how he wanted to use it.",
+      "Ali understood that wealth was an Amanah. Time was an Amanah. Health was an Amanah. Whatever remained of his life was an opportunity to seek the pleasure of Allah. He began giving away possessions that had once been important to him. He stepped away from the life he had known and focused his attention on people who had far less. He did not know how much time he had left — but he knew how he wanted to use it.",
     ],
     image: "/assets/hero-ali-portrait-clean.jpg",
     alt: "Portrait of Ali Banat, founder of MATW Project",
@@ -60,7 +60,7 @@ export const chapters: Chapter[] = [
       "For many people, such a diagnosis would represent only fear, pain and uncertainty. For Ali, it became an awakening. He described his diagnosis as being “gifted with cancer” — not because the illness was easy, but because it awakened him before it was too late.",
       "His message was not that illness should be desired. It was that Allah can place an awakening inside even the most difficult test. Cancer forced him to confront a truth that applies to every one of us: this life is temporary, our possessions will remain behind — but the good we do for the sake of Allah can continue long after we leave this world.",
     ],
-    image: "/assets/hero-ali-portrait-clean.jpg",
+    image: "/assets/matw-ali-message.jpg",
     alt: "Ali Banat reflecting on his diagnosis",
     caption: "An awakening before it was too late.",
     quote: "His illness did not take away his purpose. By the mercy of Allah, it revealed it.",
@@ -95,7 +95,7 @@ export const chapters: Chapter[] = [
     paragraphs: [
       "Ali founded Muslims Around The World Project with a clear purpose: to serve vulnerable people, strengthen communities and give others the opportunity to invest in their Hereafter.",
       "MATW was not created to be a monument to one man. It was created to help people — to turn compassion into action, and to bring together Muslims from around the world behind projects that create immediate relief and lasting change.",
-      "Ali knew he could not complete this mission alone. So he invited the Ummah to join him. People donated. They shared his message. And what started as one man’s deeply personal mission became a movement.",
+      "Ali knew he could not complete this mission alone. So he invited the Ummah to join him. People watched his story and saw a man facing the end of his life not with bitterness, but with urgency, gratitude and concern for others. They donated. They shared his message. And what started as one man’s deeply personal mission became a movement.",
     ],
     image: "/assets/hero-ali-children.jpg",
     alt: "Ali Banat with children supported by the mission",
@@ -108,7 +108,7 @@ export const chapters: Chapter[] = [
     year: "2017–18",
     nav: "His final wish",
     eyebrow: "His final wish",
-    title: "A reminder for those",
+    title: "A reminder for those of us",
     accent: "who remain.",
     paragraphs: [
       "As Ali’s health declined, his concern remained focused on the mission. He wanted the work to continue. He encouraged people to have a goal, develop a plan, and support a project that could benefit others — and reminded those unable to carry out a project themselves that they could still help make one possible.",
@@ -208,7 +208,7 @@ export const impactImages = [
 
 export const impactMetrics = [
   { value: 60022198, suffix: "", label: "total impact recorded in 2024" },
-  { value: 16425, suffix: "", label: "orphans sponsored in 2024" },
+  { value: 16882, suffix: "", label: "orphans supported in 2024" },
   { value: 535166, suffix: "", label: "water-well impact in 2024" },
   { value: 30, suffix: "+", label: "countries reached by MATW teams" },
 ];
@@ -242,7 +242,7 @@ export const actions: LegacyAction[] = [
   {
     tag: "Sadaqah Jariyah",
     title: "Build a masjid",
-    description: "A masjid becomes the spiritual heart of a community, where every prayer and every lesson may become ongoing reward.",
+    description: "A masjid is more than a building — it becomes the spiritual heart of a community, where every prayer and every lesson may become ongoing reward.",
     href: "https://matwproject.org/sadaqah-jariyah/build-a-masjid",
     cta: "Help build a masjid",
     quote: "“Whoever builds a mosque for Allah, Allah will build for him a house like it in Paradise.”",
@@ -276,7 +276,7 @@ export const trustPrinciples = [
 export const commonQuestions = [
   {
     question: "Who was Ali Banat?",
-    answer: "Ali Banat was an Australian Muslim businessman and humanitarian who founded Muslims Around The World Project. After being diagnosed with an aggressive form of cancer in 2015, he reassessed his life and dedicated his time and wealth to helping people in need. Ali passed away in 2018, but the organisation and mission he began continue today.",
+    answer: "Ali Banat was an Australian Muslim businessman and humanitarian who founded Muslims Around The World Project. After being diagnosed with an aggressive form of cancer in 2015, he reassessed his life and dedicated his time and wealth to helping people in need. His story became widely known through the “Gifted with Cancer” interview. Ali passed away in 2018, but the organisation and mission he began continue today.",
   },
   {
     question: "What did Ali Banat mean by “Gifted with Cancer”?",

@@ -29,7 +29,12 @@ function ChapterNavigation({ active, progress }: { active: number; progress: num
       </div>
       <nav>
         {chapters.map((chapter, index) => (
-          <a className={index === active ? "active" : ""} href={`#${chapter.id}`} key={chapter.id}>
+          <a
+            aria-current={index === active ? "step" : undefined}
+            className={index === active ? "active" : ""}
+            href={`#${chapter.id}`}
+            key={chapter.id}
+          >
             <i aria-hidden="true" />
             <b>{chapter.number}</b>
             <span>{chapter.nav}</span>
@@ -67,7 +72,12 @@ function ArchiveImage({ chapter }: { chapter: Chapter }) {
   return (
     <figure className={`archive archive-${chapter.treatment}`} data-cursor="View">
       <div className="archive-frame">
-        <img src={chapter.image} alt={chapter.alt} loading={chapter.number === "01" ? "eager" : "lazy"} />
+        <img
+          src={chapter.image}
+          alt={chapter.alt}
+          decoding="async"
+          loading={chapter.number === "01" ? "eager" : "lazy"}
+        />
         <span className="archive-shine" aria-hidden="true" />
       </div>
       <figcaption><span>{chapter.year}</span>{chapter.caption}</figcaption>
@@ -98,7 +108,7 @@ function ImpactMoment() {
         </div>
         {impactImages.map((image, index) => (
           <figure className={`impact-photo impact-photo-${index + 1}`} key={image.src}>
-            <img src={image.src} alt={image.alt} loading="lazy" />
+            <img src={image.src} alt={image.alt} decoding="async" loading="lazy" />
             <figcaption><span>{String(index + 1).padStart(2, "0")}</span>{image.label}</figcaption>
           </figure>
         ))}
@@ -277,6 +287,15 @@ export default function LegacyTimeline() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    addEventListener("keydown", closeOnEscape);
+    return () => removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
   return (
     <main>
       <a className="skip-link" href="#spark">Skip to the story</a>
@@ -290,10 +309,16 @@ export default function LegacyTimeline() {
           <span className="brand-mark" aria-hidden="true" />
           <span className="brand-words">ALI BANAT <em>LEGACY</em></span>
         </a>
-        <button aria-label="Toggle chapter menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          aria-controls="primary-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close chapter menu" : "Open chapter menu"}
+          className={menuOpen ? "is-open" : ""}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span /><span />
         </button>
-        <nav className={menuOpen ? "open" : ""}>
+        <nav aria-label="Primary navigation" className={menuOpen ? "open" : ""} id="primary-navigation">
           <a href="#spark" onClick={() => setMenuOpen(false)}>The story</a>
           <a href="#impact" onClick={() => setMenuOpen(false)}>Impact</a>
           <a href="#legacy" onClick={() => setMenuOpen(false)}>Legacy</a>
@@ -303,7 +328,7 @@ export default function LegacyTimeline() {
 
       <section className="opening" id="opening">
         <div className="opening-image" aria-hidden="true">
-          <img src="/assets/hero-ali-children.jpg" alt="" />
+          <img src="/assets/hero-ali-children.jpg" alt="" decoding="async" fetchPriority="high" />
         </div>
         <div className="opening-copy">
           <p className="opening-overline">A journey of faith, compassion and service</p>
@@ -317,7 +342,7 @@ export default function LegacyTimeline() {
             <small>Continue Ali’s legacy through MATW Project.</small>
           </div>
         </div>
-        <a className="scroll-cue" href="#spark"><span>Scroll to begin</span><i /></a>
+        <a aria-label="Scroll to chapter one" className="scroll-cue" href="#spark"><span>Scroll to begin</span><i /></a>
         <div className="ignition" aria-hidden="true"><i /><span /></div>
       </section>
 
